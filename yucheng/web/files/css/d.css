@@ -1,0 +1,31 @@
+*{margin:0;padding:0;word-wrap: break-word; word-break: break-all;border:0px;}
+body {background: #8D8581;font-family: "helvetica neue",arial,sans-serif;}
+ul li { list-style: none; }
+#hhgfx{width:224px;position:fixed;left:30px;top:30px;z-index:100000;*position:absolute;}
+.o{margin:20px 0 20px 0;border:3px solid #88807C;border-radius:15px}
+.i{background:#fff;padding:15px;border:2px solid #524D4A;border-radius:10px}
+#bk {
+	position:fixed;left:0px;top:300px;z-index:100000;*position:absolute;
+    background: url("http://img.guangbaobei.net/site_img/gd.gif") no-repeat scroll left top transparent;
+    color: #D3CFCE;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+	font-weight: 700;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px 0 20px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+    width: 39px;
+}
+a{outline: 0 none;text-decoration: none;}
+#zfg1{color:#ff89a7;z-index:999;width:225px;position:absolute;margin-bottom:10px;display:none}
+#zfg1 .hd{background:url(http://img.guangbaobei.net/site_img/item_bg1_012.gif) no-repeat;height:16px;font-size:0} 
+#zfg1 .ft{/*background:url(http://img.guangbaobei.net/site_img/bf_ft_w_225x5.png) no-repeat;*/height:5px;font-size:0;}
+#zfg1 .ws_ft2{background:url(http://img.guangbaobei.net/site_img/item_bg1_03.png) no-repeat;height:37px;font-size:0;*background:url(http://img.guangbaobei.net/site_img/item_bg2_03.gif) no-repeat}
+#zfg1 .pic{clear:both}
+#zfg1 .pic li{overflow:hidden;margin:0 12px 0;}
+#zfg1 .pic img{border-radius:5px}
+#zfg1 .pic .p{color:#fff;position:absolute;border-radius:3px;display:block;height:16px;padding:0 2px;line-height:16px;bottom:5px;right:5px;_bottom:auto;_margin-top:-35px;}
+#zfg1 .pic li .p{_background-color:#000;}
+.bd{background-color:#fff;}

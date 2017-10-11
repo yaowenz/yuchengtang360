@@ -1,0 +1,252 @@
+*{margin:0;padding:0;word-wrap: break-word; word-break: break-all;border:0px;}
+body {background:#2D2D2D;font:12px/20px 微软雅黑,arial,sans-serif}  
+center{padding-top:20px}  
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal
+} 
+ul li {list-style:none}
+.dmw{width:100%}
+#dm{visibility:hidden;margin:10px auto}
+table{ 
+    border:0 none; 
+    border-collapse:collapse; 
+	text-align:center 
+}
+#tuij td{text-align:center;padding:20px 0}
+#c .c1{
+	font-size:22px;
+	border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;
+	border:1px solid #585858; 
+	padding:15px 15px 0 15px;
+	background:#444444 
+} 
+#c img{vertical-align:bottom} 
+#zsy,#zsy2{
+	background:#444444;  
+	position:relative; 
+	bottom:15px; 
+	height:15px; 
+	margin:auto;
+	overflow:hidden
+}
+#zsy{display:none}
+#zsy2{bottom:16px} 
+.tjg{height:7px;background:#530000;margin-bottom:10px;overflow:hidden}  
+#tuij{
+	visibility:hidden; 
+	padding-bottom:20px;
+	background:#660000;
+	text-align:center; 
+	width:100% 
+}
+#tuij table{margin:auto;width:864px} 
+#tuij td div{
+	background:#CCCCCC;
+	width:108px;
+	height:108px; 
+	padding:3px;
+	margin:auto
+} 
+#tuij td a{
+	background:#fff; 
+	position:relative; 
+	display:block; 
+	overflow:hidden;
+	width:108px;
+	height:108px; 
+} 
+#tuij img{width:120px;position:relative;top:-5px;left:-5px} 
+h1{padding-bottom:5px;color:#fff;font-size:18px;line-height:30px;_font-size:16px;_font-family:黑体}
+#bk{background:url("http://img.guangbaobei.net/site_img/dmo.png") no-repeat;
+_cursor:pointer;
+_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src='http://img.guangbaobei.net/site_img/dmo.png');}
+#qsy{background:url("http://img.guangbaobei.net/site_img/dlogo.png") no-repeat;
+_cursor:pointer; 
+_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src='http://img.guangbaobei.net/site_img/dlogo.png');} 
+#bk,#qsy{
+	position:fixed;z-index:1000;display:block;overflow:hidden;
+	_position:absolute; 
+} 
+#bk{
+	left:7px;top:7px;
+    width:50px; 
+    height:50px
+}
+#qsy{
+ 	right:10px;bottom:10px; 
+    width:83px;
+    height:37px
+}
+#bk:hover{top:10px}
+a{outline:0 none;text-decoration:none;color:#fff}
+.bd{background-color:#fff} 
+#pre a,#next a{
+	display:block; 
+	width:9px;
+	height:8px;
+	overflow:hidden; 
+	margin:auto; 
+	background:url("http://img.guangbaobei.net/site_img/dlr6.gif") no-repeat 0 -24px
+} 
+#dm #pre,#dm #next{ 
+	vertical-align:middle
+} 
+#pre{text-align:right;padding-right:10px}
+#next{text-align:left;padding-left:10px}
+#next a{ 
+	background-position:0 -16px
+}
+#pre a:hover{background-position:0 -8px}
+#next a:hover{background-position:0 0}
+#h3{
+	text-align:left;
+	font-size:12px;
+	color:#585858
+}
+#h3 .pd a{font-size:14px}
+.pd{position:absolute;overflow:hidden;width:600px;height:50px;vertical-align:middle;line-height:50px}
+h1 a span,#h3 a{ 
+	line-height:22px;  
+	color:#B6B6B6 
+}
+#c2{padding-top:10px}
+#c2 h1{text-align:left;font-size:15px;line-height:30px;letter-spacing:1px;color:#fff;_font:14px/1.6 宋体}
+#h3 a{border-bottom:1px dotted #686868}
+#h3 p{line-height:45px;letter-spacing:1px}
+.chg{padding-bottom:6px;text-align:center;height:30px;background:#2D2D2D;
+	font-size:12px;line-height:35px;letter-spacing:1px;overflow:hidden}
+.fpw,.chg span,.chg a{
+	border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; 
+	border:none; 
+	*border:1px solid #2A2A2A;
+	padding:0 4px; 
+	background:#444444;
+	color:#242424;
+	margin:0 3px;padding:1px 4px 2px 4px\9;_padding:3px 2px 0 3px;
+	_margin:0 2px; 
+	_font:12px/17px 宋体 
+} 
+.chg span{color:#5E5E5E} 
+#footer{padding:80px 0 0 0;text-align:center} 
+#footer,#footer a{color:#CCCCCC;font-size:10px} 
+#footer img{position:relative;top:4px;width:16px} 
+#fcopy{position:absolute;top:-100000px} 
+#maskb{display:none;position:absolute;z-index:20000;width:100%;left:0;top:0;background:#2D2D2D;} 
+#maska{display:none;position:absolute;z-index:20001;width:500px;margin-left:-250px;min-height:100px;_height:100px;left:50%;top:200px;
+	background:url("http://img.guangbaobei.net/site_img/qqb.png") no-repeat #444444 0 5px;
+	_background:url("http://img.guangbaobei.net/site_img/qqb.gif") no-repeat #444444 0 5px;
+	border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;
+	border:1px solid #585858; 
+	padding:10px;
+	padding-left:65px;
+	font-size:15px;_font:14px/2 宋体; 
+	color:#CCCCCC; 
+	line-height:32px; 
+	letter-spacing:2px
+}
+#maska span{
+	color:#FC0815;
+	font-size:12px;_font-size:14px; 
+	border:2px solid #211F27;padding:0 3px;background-color:#FFB12F;letter-spacing:2px;padding:0 2px 1px 3px\9;_padding:4px 
+}
+#h3 div #qqa{
+	padding:5px 8px;_padding:5px 10px; 
+	background:url("http://img.guangbaobei.net/site_img/qqs1.gif") no-repeat transparent;
+	border:none;
+	cursor:pointer 
+}
+#bdshare,.bdlikebutton{display:none}
+#pl{padding:20px 0 0;text-align:left;letter-spacing:1px;font-size:13px;_font-size:12px;_font-style:normal}
+.p1,.p2 
+{
+    padding:5px 0 5px 15px;margin-bottom:15px;color:#AFB0A8
+} 
+.p1{border-left: 3px solid #1A1A1A}
+.p2{border-left: 3px solid #393939}
+#pl p a img,#pl p a{
+	width:24px;height:24px;
+}
+#pl p a{
+	padding:2px;
+	background:#FFE3AC;
+	border:1px solid #343434;
+	display:inline-block;
+	margin-right: 6px;
+	*display:inline; 
+	zoom:1
+}
+.fpl{padding:5px 15px;border-right: 3px solid #1A1A1A;text-align:center}
+.fpw{ 
+	background:#393939;
+	clear:both; 
+	padding: 14px 20px 10px
+}
+.fpw textarea{
+	color:#B6B6B6; 
+	background:#444444;
+	border:1px solid #343434;
+    height:50px;
+    line-height:19px;
+    margin-bottom:6px;
+    resize:none;
+	letter-spacing:1px;
+	font-size:12px;
+	overflow-y:auto 
+}
+.fpw .dy2{ 
+	border-top:1px dashed #444444;
+    margin:16px 0 10px;
+    padding-top:17px 
+}
+.fpw #st1{background:url("http://img.guangbaobei.net/site_img/dlr8.gif") no-repeat 0 -127px #393939;width:59px;height:22px;line-height:22px;cursor:pointer} 
+#des1{width:300px;padding:15px 0 0 0;overflow:hidden}
+#dmw2,.dpn{display:none} 
+#tuij td .ddn{text-align:center;height:36px;overflow:hidden;margin-top:5px;padding:3px 6px 6px;width:102px;color:#1F0000;background:#5E0000} 
+.dy1{
+	position:relative; 
+	bottom:15px;
+	margin:auto;
+	overflow:hidden;
+    background:#6D6D6D;  
+    border: 1px solid #585858;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+    padding:10px 0; 
+    text-align:center;
+}
+input,textarea {
+    border-radius: 4px 4px 4px 4px;
+    padding:4px 2px 4px 4px
+}
+.dy1 input{
+	color:#A1A1A1;
+	background:#EEE8D0; 
+	box-shadow: 1px 1px 1px #585858; 
+	font-family:微软雅黑
+}
+.dy1 #to,.dy2 #to{width:240px;*width:225px}
+.dy1 .sbt{
+	color: #BD7013;
+    background:#FFD278;
+    cursor: pointer;
+	*height:28px;
+    padding:3px 20px 
+}
+.dy2 .sbt{
+	color:#B84E14;
+    background:#FFC95D;  
+    cursor:pointer; 
+    padding:0 11px; 
+	height:23px;
+	*margin-bottom:1px 
+}
+.dy2 #to{border:1px solid #343434} 
+.dy2 input{
+	font-family:微软雅黑; 
+	color:#787878;
+	background:#444444;
+	line-height:15px; 
+	height:15px
+}
+.dy1,.dy2{display:none} 

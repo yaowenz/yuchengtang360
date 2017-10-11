@@ -1,0 +1,27 @@
+*{margin:0;padding:0;word-wrap: break-word; word-break: break-all}
+body {background: #ede6cf url(http://img.guangbaobei.net/site_img/background1.gif) repeat 0 0} 
+body, th, td, input, select, textarea, button {font:12px/1.6 微软雅黑,Arial,Helvetica,sans-serif;color:#6B645B;_font:12px/1.6 Arial,Helvetica,sans-serif} 
+.t_main{border-width: 0px;width:100%} 
+.t_main td{vertical-align:top} 
+#menu_main{/*background-color:#1F1E1A;*/width:180px;position:absolute;left:0;top:0;z-index:999} 
+.app_sidebar{width: 180px}
+.app_sidebar .min-width{width: 180px}
+	.app_sidebar .topline { border-top: 1px dashed #CCC}
+	.app_sidebar .t_input{ width: 110px}
+	.app_sidebar a{ color:#A9A597}
+	.app_sidebar .c_g {color:#00DA52}
+	.app_sidebar .c_b {color:#1788E8}
+	.app_sidebar .c_g1 {color:#95E69A}
+.mainarea {min-width:790px;padding:10px}
+.hidden {display:none;} 
+.clear_both{line-height:0;clear:both;height:0;}
+.min-width{clear:both;display:block;height:1px;}
+#footer {padding:0 0 0 330px;text-align:left}
+#footer a {color: #6B645B }
+#content {overflow: hidden}
+#sidebar {float: right; width: 250px; overflow: hidden}
+#sidebar .ye_r_t { margin: 0 0 20px}
+ul li {list-style: none; }
+select {margin-right: 2px; }
+a {color: #CCB186; text-decoration: none; outline:none} 
+a img {border: none}

@@ -1,0 +1,10 @@
+#bk{
+	left:0px;top:0px;
+	width:274px; 
+    height:131px;
+	background:url("http://img.guangbaobei.net/site_img/dknb.png") no-repeat;
+	_background:url("http://img.guangbaobei.net/site_img/dknb.gif") no-repeat;
+	_filter:none 
+}
+#bk:hover{top:-3px;left:-3px}
+#dm{margin-top:110px} 

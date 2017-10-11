@@ -1,0 +1,241 @@
+#yct{top:35px} 
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal
+}
+ 
+#hw1 {
+	width:100%;
+	min-width:960px;
+	position:fixed;
+	z-index:100;
+	height:35px;
+	left:0
+}
+.hi1 {
+	width:960px;
+	height:35px;
+	/*margin:0 auto;*/
+	margin-left:20px;
+	position:relative;
+	z-index:1002
+}
+.headShadow {
+	height:35px;
+	position:absolute;
+	top:0;
+	width:100%;
+	background-color:#000;
+	opacity:.8;
+	filter:alpha(opacity=80);
+	z-index:1000
+}
+#topWrap {
+	padding-top:55px;
+	_padding-top:15px
+}
+.topMenu {
+	position:absolute;
+	right:0;
+	top:11px;
+	line-height:11px;
+	line-height:13px\9;
+	*line-height:16px;
+	_line-height:15px;
+	color:#899db5;
+	z-index:1003
+}
+.topMenu a {
+	margin:0 7px;
+	font-size:14px
+}
+.topMenu {
+	position:absolute;
+	right:0;
+	top:11px;
+	line-height:11px;
+	line-height:13px\9;
+	*line-height:16px;
+	_line-height:15px;
+	color:#899db5;
+	z-index:1003
+}
+#hw1 h3 {
+	float:left
+}
+#hw1 h3 a {
+	display:block;
+	width:179px;
+	height:35px;
+	background:url(http://img.guangbaobei.net/site_img/logos.png) no-repeat;
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src='http://img.guangbaobei.net/site_img/logos.png');
+	text-indent:-9999em;
+	overflow:hidden;
+	_cursor:pointer
+}
+.tpn {
+	height:35px;
+	float:left
+}
+.tpn .tni {
+	float:left;
+	position:relative;
+	margin-right:1px
+}
+.tpn a {
+	font-size:14px;
+	display:block;
+	height:16px;
+	line-height:15px;
+	line-height:17px\9;
+	overflow:hidden;
+	padding:9px 0 10px;
+	_float:left;
+	cursor:pointer;
+	_position:relative;
+	white-space:nowrap
+}
+.tpn .tni u {
+	display:block;
+	position:relative;
+	z-index:1005;
+	margin:0 10px;
+	text-decoration:none;
+	text-align:center
+}
+.tpn .tni a i {
+	position:absolute;
+	display:block;
+	height:35px;
+	width:100%;
+	top:0;
+	left:0
+}
+.tpn .tni a:hover i,.tpn .tni .active i {
+	background-color:#666;
+	opacity:.35;
+	filter:alpha(opacity=35)
+}
+.tpn .countItem a,.tpn .accountItem a {
+	padding-left:5px;
+	padding-right:5px
+}
+.tpn em,.tpn strong {
+	display:-moz-inline-stack;
+	display:inline-block;
+	vertical-align:top
+}
+.tpn em {
+	margin:6px 0 0 3px;
+	border-style:solid dashed dashed;
+	border-color:transparent;
+	border-top-color:#c9c9c9;
+	font-size:0;
+	width:0;
+	height:0;
+	line-height:0;
+	border-width:3px 3px 0
+}
+.tpn strong {
+	height:17px;
+	padding:0 3px;
+	margin-top:-2px;
+	line-height:16px;
+	line-height:18px\9;
+	background-color:#f56200;
+	color:#FFF
+}
+.hi1 .right {
+	position:absolute;
+	right:165px;
+	margin-left:0;
+	padding-right:0;
+	overflow:visible
+}
+.hi1 .right .tpn {
+	margin-right:5px
+}
+.hi1 .quickMenu .tni u {
+	margin:0 5px;
+	min-width:16px;
+	_width:16px;
+	_overflow:visible;
+	height:16px
+}
+.tpn .tpnSub {
+	position:absolute;
+	left:0;
+	top:34px;
+	min-width:110px;
+	*width:110px;
+	background:#1a1a1a;
+	opacity:.9;
+	filter:alpha(opacity=90)
+}
+.tpn .tpnSub li {
+	white-space:nowrap
+}
+.tpn .tpnSub a {
+	float:none;
+	padding:8px 9px 9px;
+	height:12px;
+	line-height:10px;
+	line-height:13px\9
+}
+.tpn .tpnSub a:hover {
+	background:#3d3d3d
+}
+.tpn .tpnSub b {
+	margin-left:2px;
+	font-weight:normal;
+	color:#f56200
+}
+.tpn .mail u,.tpn .at u,.tpn .follower u {
+	text-indent:-9999em
+}
+.tpn .mail u {
+	background-position:-354px 0
+}
+.tpn .mail .active u {
+	background-position:-336px 0
+}
+.tpn .at u {
+	background-position:-372px 0
+}
+.tpn .follower u {
+	background-position:-390px 0
+}
+.tpn .at sub,.tpn .mail sub,.tpn .follower sub {
+	display:block;
+	min-width:11px;
+	_width:11px;
+	_overflow:visible;
+	position:absolute;
+	left:12px;
+	_left:0;
+	top:7px;
+	height:12px;
+	line-height:11px;
+	font-size:11px;
+	-webkit-text-size-adjust:none;
+	background-color:#f56200;
+	padding:0 2px;
+	color:#fff;
+	z-index:1006;
+	font-weight:bold;
+	font-family:Tahoma;
+	text-align:center
+}
+.tpn .accountItem u {
+	margin:0 3px 0 5px
+}
+.tpn .accountItem a {
+	font-size:12px
+}
+#hw1 a.active {
+    color: #FFFFFF;
+}
+#hw1 a {
+    color: #C9C9C9;
+}

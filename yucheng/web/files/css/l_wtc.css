@@ -1,0 +1,50 @@
+.l_wtc{
+	width:246px;
+	position:fixed;
+	z-index:10;
+	left:946px;top:51px;
+	_position:absolute;
+    _bottom:auto; 
+    _clear:both;
+    _top:expression(eval(document.compatMode &&
+        document.compatMode=='CSS1Compat') ?
+        documentElement.scrollTop
+        : document.body.scrollTop);
+	display:none
+}
+.l_wtc .w1{ 
+	background:url(http://img.guangbaobei.net/site_img/tcl1.gif) no-repeat;
+	height:104px
+} 
+.l_wtc .w2{
+	background:url(http://img.guangbaobei.net/site_img/tclc.gif);overflow:hidden;
+	height:460px
+}
+.l_wtc .w3{
+	height:58px;background:url(http://img.guangbaobei.net/site_img/tcl2.gif) no-repeat
+}
+#hw1 .w2 .wsp,.w2 .wsp{width:22px;bottom:0;left:0;position:static;margin-top:10px} 
+.l_wtc .w2{padding-left:13px}
+.l_wtc .ws1{padding:39px 0 0 66px} 
+.l_wtc .ws1,.l_wtc .ws1 table{position:static} 
+#wsi1{width:120px}
+.l_wtc input{bottom:0px}
+#wsi1{color:#E7DEC2}
+.w2 .alt1{width:213px;margin-bottom:9px} 
+.w2 img{width:38px;}
+#hw1 .w2 .bn,.w2 .bn{width:38px;height:38px;overflow:hidden;margin:8px 0 8px 6px;border:2px solid #EAE3CB;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}
+#hw1 .w2 a,.w2 a{display:block;float:left;width:124px;_width:118px;overflow:hidden}
+#hw1 .w2 .lg{width:198px;_width:192px} 
+.w2 .wz{padding:10px 0 0 8px;color:#8A9295}
+.w2 {color:#8A9295} 
+.w2 .wh2 .wz,.w2 .wh2{color:#CFBE89}
+.w2 .hh{clear:both;width:208px;height:1px;background:url("http://img.guangbaobei.net/site_img/np_03.gif") repeat-x;overflow:hidden}
+.w2 .wh1{background:#FAF8EC} 
+.w2 .wh1,.w2 .wh2{height:57px;width:209px;overflow:hidden} 
+.l_wtc .w2 a.bn:hover,.w2 .shs{
+	border:2px solid #CB9997;
+	border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px
+}
+.l_wtc .w2 a.wz:hover{
+	color:#F85108
+} 

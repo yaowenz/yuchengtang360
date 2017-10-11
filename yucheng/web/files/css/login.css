@@ -1,0 +1,175 @@
+*{margin:0;padding:0}
+:focus{outline:none}
+table {border-collapse:collapse; border-spacing:0} 
+fieldset,img {border:0} 
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal; font-weight:normal0}
+ol,ul{list-style:none} 
+caption,th {text-align:left} 
+h1,h2,h3{font-size:100%;font-weight:normal}
+textarea,input{resize:none;}  
+button{overflow:visible;width:auto;margin:0;padding:0;border:0 none;outline:none;}
+ 
+/* Public */ 
+
+body{background: #ede6cf url(http://img.guangbaobei.net/site_img/background1.gif)}
+body,input,td{font-size:14px;font-family:Tahoma,'Microsoft Yahei','Simsun';color:#503e2c;}
+.content-block{width:940px;margin:0 auto;padding:0 10px 0 10px;} 
+a{color:#9b8878;text-decoration:none;outline: 0 none;text-decoration: none;}
+a:hover{color:#330000;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-block;} 
+/* Hide from IE Mac */
+.clearfix {display:block;}
+textarea, input[type=text], input[type=email], input[type=password] {border:1px solid #daceb7;box-shadow:0 2px 1px rgba(0,0,0,.05) inset, 0 1px 0 rgba(255,255,255,1);border-radius:4px; -webkit-appearance:none;line-height:100%;}
+textarea:focus, input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {outline:none; border:1px solid #996633;box-shadow:0 0 4px rgba(153,102,51,0.6);}
+
+/* Head */ 
+
+.head{background: #eed9b4 url(http://img.guangbaobei.net/site_img/logo2.gif) repeat-x 0 -477px;}
+.head .content-block{height:180px; background:url(img/web_logo.png) no-repeat 0 0;}
+.head .logo {float: left; }
+.head .logo a {display: block;	height: 180px;	width: 250px;	text-indent: -999999px;}
+
+.hidden {display:none;}
+.login {display:none;}
+.head .userbar{background:#d95338;float:right;box-shadow:0 1px 2px rgba(0,0,0,.2);line-height:100%;padding:3px}
+.head .userbar a{color:#fff;cursor:pointer}
+.head .login,.head .logout{border:1px dashed #eeb3a8;border-top:none;padding:6px 15px}
+.head .logout{padding:8px 15px 10px}
+.head a.username{font-weight:bold}
+.head a.exit{color:#e79180;padding:0 10px 0 4px}
+.head a.exit:hover{color:#fff}
+.head .bti{opacity:0.7;display:inline-block;width:20px;height:20px;vertical-align:middle;_margin-left:6px}
+.head a:hover .bti{opacity:1}
+.head .message .bti{background:url(http://img.guangbaobei.net/site_img/logo2.gif) no-repeat -80px 0}
+.head .code .bti{background:url(http://img.guangbaobei.net/site_img/logo2.gif) no-repeat -100px 0}
+.head #logintop {margin: 0 10px 0 0;}
+.head a.message, .head a.message:hover {text-decoration:none;}
+.head #unread_messages_count{display:inline-block;position:absolute;font-size:10px;color:#fff;background:#fe8f00;font-weight:bold;margin:-5px 0 0 -10px;padding:0 2px 0 2px; box-shadow:0 1px 2px rgba(0,0,0,.2);border-radius:2px;}
+
+
+/* Pop-up login, register */
+
+#login-form{top:50%;left:50%;z-index:1002;box-shadow:0 4px 16px rgba(0,0,0,.6);width:540px;display:none;}
+#login-form .col1{float:left;width:250px;height:235px;background:#fff;padding:25px;}
+#login-form .col1 .inputbox{height:156px}
+#login-form .col1 .inputbox label{display:block;line-height:100%;padding:0 0 8px}
+#login-form .col1 .inputbox input{vertical-align:middle;font-size:18px;width:94%;margin:0 0 15px;padding:5px}
+#login-form .col1 .error {outline:none;	border:1px solid #e60012;background: url(http://img.guangbaobei.net/site_img/logo2.gif) no-repeat 0px -109px;box-shadow:0 1px 2px rgba(0,0,0,.1) inset;}
+
+#login-form .col1 .optionbox{float:left}
+#login-form .col1 button{float:right;width:72px;height:38px;line-height:38px;_height:33px;_line-height:33px;}
+
+#login-form .col2{float:left;width:189px;background:#f7f5f2;height:235px;padding:25px;border-left:1px dashed #d6cab7;}
+#login-form .col2 .intro{height:156px;line-height:170%}
+#login-form .col2 .intro a{color:#503e2c;text-decoration:underline}
+#login-form .col2 a.button{width:70px;height:36px;line-height:36px;}
+
+#login-form a.close,#suggest-form a.close, #report-form a.close{display:block;height:45px;width:45px;position:absolute;cursor:pointer;}
+#login-form a.close {margin:0 0 0 495px;}
+#suggest-form a.close {margin:0 0 0 495px;}
+#report-form a.close {margin:0 0 0 105px;}
+#login-form .close .bti,#suggest-form .close .bti, #report-form .close .bti{height:20px;width:20px;display:inline-block;background:url(http://img.guangbaobei.net/site_img/logo2.gif) no-repeat -120px 0;opacity:0.55;position:relative;margin:12px;}
+#login-form a.close:hover .bti,#suggest-form a.close:hover .bti, #report-form a.close:hover .bti{opacity:1}
+
+/*  sign in */
+
+.sign {}
+.sign .logo {	padding: 80px 0 10px 0;}
+.sign .logo a{background:url(http://img.guangbaobei.net/site_img/logo2.gif) no-repeat 16px 21px;height: 72px;width:312px;display:block;margin: 0px auto auto;}
+.sign .block {width:345px;padding:20px;margin:0 auto;text-shadow:0 1px 0 rgba(255,255,255,.6);}
+.sign .note {	line-height: 180%;	margin: 20px 0 0 0;	text-align: center;}
+.sign .note a {	text-decoration: underline;}
+.sign #reginfo {display:none;} 
+
+.sign input {padding:9px;width:230px!important;font-size:14px;} 
+.sign input:-moz-placeholder { color: #e6dfd5; }
+.sign input::-webkit-input-placeholder{ color:#e6dfd5; }
+.sign .placeholder {color: #e6dfd5;} 
+.sign button, .sign .notify-success a {font-size:14px;padding:9px;width:250px;background-color:#f1ede3; display: inline-block; border-radius:4px;box-shadow:0 1px 0 rgba(255,255,255,1) inset, 0 1px 1px rgba(0,0,0,0.05);border: 1px solid #b6a391;cursor:pointer;	color:#503e2c;text-shadow:0 1px 0 rgba(255,255,255,1);}
+.sign button:hover, .sign .notify-success a:hover {color:#814d1a;background-color:#feda71;border: 1px solid #d6982f;box-shadow:0 1px 0 rgba(255,255,255,0.5) inset, 0 1px 1px rgba(0,0,0,0.2);}
+.sign button:active, .sign .notify-success a:active {box-shadow:0 2px 1px rgba(0,0,0,0.1) inset}
+.sign .notify-success a {width:40%;} 
+
+.sign .notify-error{color:#ff3a00;text-align: center;margin:0 0 20px 0;}
+.sign .notify-success {background-color:#ece5d8;position:absolute;z-index:1000;display:block;width:250px;height:310px;padding:60px 100px 0 0;font-size:14px;text-align:center;}
+.sign .notify-success p {line-height:160%;margin:0 0 20px 0;}
+.sign #insertinvitation_code, .sign #insertlogin, .sign #insertemail, .sign #insertp1, .sign #insertp2 {display:block; color:#9b8878; font-size:12px;clear:right; float:right; position:absolute; margin:-42px 0 0 260px;
+_margin:9px 0 0 9px; /* for IE6 */ }
+.sign .verifi-success, .sign .verifi-failed {display:inline-block; vertical-align:middle; height:20px; width:20px; margin:0 4px 0 0;}
+.sign .verifi-success {background:url(http://img.guangbaobei.net/site_img/logo2.gif) no-repeat -200px 0;}
+.sign .verifi-failed {background:url(http://img.guangbaobei.net/site_img/logo2.gif) no-repeat -220px 0;}
+.rfm {border:none;width:auto;padding-bottom:15px}
+.rfm .px:focus{border:1px solid #996633}
+.rfm a{color:#9B8878}
+.rfm th, .rfm td {
+	color:#9B8878; 
+    line-height:20px;
+    padding:0; 
+    vertical-align:middle
+}
+#captcha_img{border: 1px solid #DACEB7;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05) inset, 0 1px 0 #FFF;width:247px;height:40px}
+.pnc, a.pnc {
+    background:none;
+    border:none;
+    color:#503E2C!important; 
+}
+.pn {
+    background:none;
+    border:none;
+    box-shadow:none;
+    cursor:pointer;
+    height:36px;
+    margin:0;
+    overflow:hidden;
+    padding:0;
+    vertical-align:middle 
+}
+.rfm .px{width:auto}
+.flb em {
+    color: #7D7672;
+    font-size: 18px;
+	font-weight: normal
+}
+.nfl .f_c{
+	background:none;
+	border:none;
+	width:100% 
+}
+.f_c .flb{display:none} 
+.nfl .f_c .rfm td{padding:0}
+#messagelogin,#messagetext{
+	margin:auto;
+	border:none 
+}
+#messagetext{width:266px}
+#messagetext p{
+	padding-top:8px;
+	color:#95806F;
+	font-size:18px
+}
+#user_role {
+  padding: 2px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  border-style: solid;
+  border-width: 1px;
+  line-height: 15px;
+}
+#user_role option {
+	padding: 2px;
+}
+#login_error,#login .message{
+	background-color: #F4EBA1;
+    border-color: #E7C832;
+	margin:10px 0 16px 0;
+    padding:10px;
+	border-radius:5px; 
+    border-style:solid;
+    border-width:1px;
+	color: #B17E3E; 
+	font-size:12px;
+	width:228px;
+	text-shadow:none 
+}

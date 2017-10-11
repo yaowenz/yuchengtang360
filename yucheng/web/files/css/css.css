@@ -1,0 +1,83 @@
+BODY {
+	FONT-SIZE: 14px; COLOR: #000000; FONT-FAMILY: 宋体; BACKGROUND-COLOR: #F6F8FD;
+}
+li {list-style-type:none;}
+.clear-both{clear:both;}
+A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #428eff
+}
+TD {
+	FONT-SIZE: 14px; LINE-HEIGHT: 15px; FONT-FAMILY: 宋体;padding:5px
+}
+TH {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: white; BACKGROUND-COLOR: #4455aa
+}
+TD.txlHeaderBackgroundAlternate {
+	COLOR: #ffffff; BACKGROUND-COLOR: #799ae1
+}
+#TableTitleLink A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+#TableTitleLink A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+#TableTitleLink A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+#TableTitleLink A:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+TD.txlRow {
+	BACKGROUND-COLOR: #dee5fa
+}
+TD.txlRowHighlight {
+	BACKGROUND-COLOR: #d4def9
+}
+.tableBorder { 
+	TABLE-LAYOUT: fixed;BORDER-RIGHT: #6595d6 1px solid; BORDER-TOP: #6595d6 1px solid; BORDER-LEFT: #6595d6 1px solid; BORDER-BOTTOM: #6595d6 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.tableBorder td{
+	word-WRAP: break-word
+}
+INPUT {
+	FONT-SIZE: 14px; LINE-HEIGHT: 15px; FONT-FAMILY: Tahoma,Verdana,宋体
+}
+SELECT {
+	FONT-SIZE: 12px; LINE-HEIGHT: 15px; FONT-FAMILY: Tahoma,Verdana,宋体 
+}
+TEXTAREA {
+	FONT-SIZE: 12px; LINE-HEIGHT: 15px; FONT-FAMILY: Tahoma,Verdana,宋体
+}
+.STYLE3 {font-size: 12px}
+ 
+.captcha1{width:140px;height:70px;} 
+
+button{height:20px;} 
+
+
+/*分页*/
+.pager{ /*position:relative;*/ top:7px; right:5px; text-align:center;}
+	.pager li,.pager li a{ float:left; margin:0 2px; width:25px; line-height:25px; cursor:pointer;}
+	.pager li a,.pager li span{ display:block;width:23px; height:23px; border:1px #CCC solid; text-align:center; text-decoration:none; color:#666;background:#fff;} 
+	.pager li a:visited{ color:#666;}
+	.pager li a:hover,.pager li span:hover{ background:#EDF2F9; width:21px; height:21px; border:2px #CCC solid;}
+		.pager .defultKey{ color:#C30; font-weight:700; width:23px; height:23px; border:1px #CCC solid;background:#EDF2F9;}
+	.pager .pre{ width:70px; height:25px;}
+		.pager .pre a,.pager .pre span{display:inline-block; background:url(/images/controlBg1.jpg) no-repeat 0 -29px; padding:0 0 0 20px;width:50px; height:25px; line-height:25px; text-decoration:none; color:#000; border:none; text-align: justify;}
+		.pager .pre a:visited{ color:#000;}
+		.pager .pre a:hover,.pager .pre span:hover{background:url(/images/controlBg1.jpg) no-repeat 0 -29px;padding:0 0 0 20px;width:50px; height:25px; line-height:25px; text-decoration:none;border:none; text-align: justify; color:#C30;}
+	.pager .next{ width:70px; height:25px;}
+		.pager .next a,.pager .next span{display:inline-block; background:url(/images/controlBg1.jpg) no-repeat -73px -29px; padding:0 0 0 16px;width:54px; height:25px; line-height:25px; text-decoration:none; color:#000; border:none; text-align: justify;}
+		.pager .next a:visited{ color:#000;}
+		.pager .next a:hover,.pager .next span:hover{background:url(/images/controlBg1.jpg) no-repeat -73px -29px; padding:0 0 0 16px;width:54px; height:25px; line-height:25px; text-decoration:none; border:none; text-align: justify; color:#C30;}
+.pagerArea{ position:relative; margin:15px auto 0; width:641px; height:25px;}
+.morePagerArea{ position:relative; margin:0 auto; height:25px;}
+.pager .moreArticle{width:70px; height:25px;}
+	.pager .moreArticle a{background:url(/images/controlBg1.jpg) no-repeat -146px -29px; border:none; text-align:center; color:#000; width:70px;  height:25px; line-height:25px;}
+	.pager .moreArticle a:visited{color:#000;}
+	.pager .moreArticle a:hover{background:url(/images/controlBg1.jpg) no-repeat -146px -29px; width:70px;  height:25px; color:#C30; border:none;}
+	.pager .preDisabled{background:url(/images/controlBg1.jpg) no-repeat 0 -29px; padding:0 0 0 20px;width:50px; height:25px; line-height:25px; text-decoration:none; color:#999; border:none; text-align: justify;}
+	.pager .nextDisabled{ background:url(/images/controlBg1.jpg) no-repeat -73px -29px; padding:0 0 0 16px;width:54px; height:25px; line-height:25px; text-decoration:none; color:#999; border:none; text-align: justify;}
