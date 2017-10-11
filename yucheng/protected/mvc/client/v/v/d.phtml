@@ -87,6 +87,7 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
 	<script type="text/javascript" src="<?=$m3d_path?>s3d/s3d.js?v=5<?=CSS_VERSION?>"></script>
 	<script type="text/javascript"><?=$m_3d2?></script>
+	<script src="<?=FILE_URL?>/js/audiojs/audio.min.js"></script>
 </head>
 <body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="bdtl">
 	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
@@ -172,7 +173,7 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 			</li>
 			<?php else: ?>
 			<li>
-				<a href="/v-img.html?p=b&id=<?=$i['id']?>&n=<?=$k?>" onclick="if(wx_ready) {wx.previewImage({current:h+'/b/<?=$p?>',urls:p_urls});return false;}"><img src="<?=M_PIC_URL.'/'.$i['id'].'/b/cover.jpg'?>" width="100%"></div></a>
+				<a href="/v-img.html?p=&id=<?=$i['id']?>&n=cover" onclick="if(wx_ready) {wx.previewImage({current:h+'/cover.jpg',urls:p_urls});return false;}"><img src="<?=M_PIC_URL.'/'.$i['id'].'/cover.jpg'?>" width="100%" /></a>
 			</li>
 			<?php endif;?>
 			<?php
@@ -200,7 +201,17 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 					echo '<li style="color:blue;font-size:16px">视频修改或添加:<br/>请将视频文件(640.mp4) 和缩略图(1.jpg)(建议300*200px) 上传到图片服务器: <br/>'.cm_url::get('yucheng-img-path').'/m3d/movie/'.$i['id'].' <br/>目录下</li>';
 				}
 			?>
-			<li id="vd1"></li>
+			<!-- Video / Audio -->
+			<li id="vd1">
+				<?php if(file_exists(realpath(cm_url::get('yucheng-img-path')).'/m3d/audio/'.$i['id'].'.mp3')):?>
+				<script type="text/javascript">
+					audiojs.events.ready(function() {
+			        	var commentaryAudio = audiojs.create(document.getElementById('commentary'));
+					});
+				</script>
+				<audio id="commentary" src="<?=FILE_URL.'/m3d/audio/'.$i['id']?>.mp3" type="audio/mp3" preload="none" loop="false"></video>
+				<?php endif;?>
+			</li>
 			<?php
 				if($this->acl)
 				{
@@ -218,7 +229,7 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 			</li>
 			<li class="tzq2">
 				<?php foreach($i['pics'] as $k=>$p){?>
-				<a href="/v-img.html?p=b&id=<?=$i['id']?>&n=<?=$k?>" onclick="if(wx_ready) {wx.previewImage({current:h+'/b/<?=$p?>',urls:p_urls});return false;}"><div class="dmg" style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/s/'.$p?>) no-repeat;background-size:100%;"></div></a>
+				<a href="/v-img.html?p=b&id=<?=$i['id']?>&n=<?=$k?>" onclick="if(wx_ready) {wx.previewImage({current:h+'/b/<?=$p?>',urls:p_urls});return false;}"><div class="dmg" style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/s/'.$p?>) no-repeat;background-size:100%;background-position:center"></div></a>
 				<?php }?>
 				<div style="clear:both"></div>
 			</li>

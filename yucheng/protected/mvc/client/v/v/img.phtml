@@ -48,9 +48,13 @@
 			   var r = window.location.search.substr(1).match(reg);
 			   if (r!=null) return (r[2]); return null;
 			}
-
-			if(GetQueryString("p") && GetQueryString("n")) imgp="<?=$m3d_path?>pic/"+GetQueryString("id")+"/"+GetQueryString("p")+"/"+GetQueryString("n")+".jpg#tzq";
-			else imgp="/pic/demo1_b/11.jpg#tzq";			
+			if(GetQueryString("p") && GetQueryString("n")) {
+				imgp="<?=$m3d_path?>pic/"+GetQueryString("id")+"/"+GetQueryString("p")+"/"+GetQueryString("n")+".jpg#tzq";
+			} else if (GetQueryString("n")) {
+				imgp="<?=$m3d_path?>pic/"+GetQueryString("id")+"/"+"/"+GetQueryString("n")+".jpg#tzq";
+			} else {
+				imgp="/pic/demo1_b/11.jpg#tzq";
+			}
 			document.getElementById("img1").src=imgp;
 		</script>
 	</body>
