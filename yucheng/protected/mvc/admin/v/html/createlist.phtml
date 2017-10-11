@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>最近添加帖子列表</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=cm_url::get('tq-img')?>/css/css.css">
+ </head>
+<body> 
+
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tbody>
+<tr> 
+<th align=center style="height: 23px"><?php if($_GET['tt']) echo '<font style="color:yellow">《'.$_GET['tt'].'》</font> ';?>最近添加帖子列表</th>
+</tr> 
+
+<tr bgcolor="#DEE5FA">
+<td align="center" class=txlrow> 
+<tbody><tr bgcolor="#DEE5FA">
+<td valign="top">
+  
+
+
+
+
+
+
+<table width="100%" cellspacing="1" cellpadding="2" class="tableBorder" >
+        <tbody><tr align="center" bgcolor='#799ae1' style='color:#fff;'>  
+          <td align="center">tq_id</td>
+          <td align="center">名称</td>
+          <td align="center">添加时间</td>
+		  <td align="center">编辑</td> 
+        </tr>
+      <!--   -->
+	  <?php foreach($this->r as $k => $i){?>
+  		 <tr class="b">
+ 	  	  <td align="center"><?=$i['id']?></td> 
+ 	      <td align="center"><?=$i['name']?></td>
+ 	      <td align="center"><?=date('Y-m-d',$i['update_time'])?></td>
+		  <td align="center">
+			<a href="/v-d-i-<?=$i['id2']?>.htm" style="color:red" target=_blank><b>去进一步编辑!</b></a> 
+			<a href="/admin-html-createdel.html?id=<?=$i['id']?>" onclick="return confirm('确认要删除吗? 请谨慎!');" style="color:blue" target=_blank><b>删除</b></a> </td> 
+         </tr>
+      <?php }?>
+      <!-- -->
+      </tbody></table> 
+
+ 
+
+
+
+
+
+</td>
+</tr>
+</tbody>
+</td>
+</tr>
+
+
+<tr bgcolor="#DEE5FA">
+<td align=center class=txlrow></td>
+</tr>
+</tbody></table>
+
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }?>
+</body>
+</html>

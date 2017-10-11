@@ -1,0 +1,20 @@
+<!doctype html>
+<html style="background-color: lightslategray">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+	<body>
+	<div style="margin:100px auto;height:900px;width:490px;"> 
+		<iframe id="if1" frameborder="20" scrolling="" height="900" width="490" style="border: 3px;border-style: solid;border-radius: 20px;border-color: slategrey;"></iframe>
+		<script type="text/javascript">
+		function GetQueryString(name){
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+			var r = window.location.search.substr(1).match(reg);
+			if (r!=null) return (r[2]); return null;
+		}
+		document.getElementById("if1").src=unescape(GetQueryString('p'));
+	</script>
+	</div> 
+	</body>
+</html>

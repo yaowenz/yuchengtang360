@@ -1,0 +1,23 @@
+<ul class="pager"> 
+		<?php	foreach($this->page_bar as $key=>$item){?>
+		<?if ($key == "now" &&  $key != "0"){?>
+		<li class="defultKey">
+			<?=$item?>
+		</li> 
+		<?}else if ($item=="now_first" && $key=="0"){?>
+			<li class="pre preDisabled" title="现在是第一页">上一页</li>
+		<?}else if ($key=="0") {?>
+			<li class="pre"><a href="javascript:void(0)" onclick="document.getElementById('page').value='<?if ($item>0){echo $item;}?>';document.form1.submit();" title="上一页">上一页</a> </li>
+			<?}else if($item=="..."){?>
+			<li>...</li>
+		<?}else if ($item=="none_next" && $key=="next"){?>
+			<li class="next nextDisabled" title="暂无下页">下一页</li>
+		<?}else if ($key=="next"){?>
+			<li class="next"><a href="javascript:void(0)" onclick="document.getElementById('page').value='<?if ($item>0){echo $item;}?>';document.form1.submit();" title="下一页">下一页</a></li>
+		<?}else{?>
+			<li><a href="javascript:void(0)" onclick="document.getElementById('page').value='<?if ($item>0){echo $item;}?>';document.form1.submit();" title="第<?=$item?>页">
+			<?=$item?>
+			</a></li>
+		<?php }}?>
+		<br class="clear-both" />
+</ul>

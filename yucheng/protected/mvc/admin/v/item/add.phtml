@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>添加艺术品</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=FILE_URL?>/css/css.css">
+ </head>
+<body> 
+
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tbody>
+<tr>
+<th align=center style="height: 23px">添加艺术品</th>
+</tr>
+
+	   <tr bgcolor="#DEE5FA">
+        <td align="center" class=txlrow> 
+  <tbody><tr>
+  <td valign="top">
+    <form action="" method="post" name="userform" onsubmit=""> 
+        <table class="table_area" align="center" cellpadding="3" cellspacing="1" width="98%">
+          <tbody>
+			<tr height="80" class="b" align="left">
+            <td width="80">名称</td>
+            <td><input class="box" name="name" id="u_c" value="" size="50" type="text"></td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">文字介绍</td>
+            <td><input class="box" name="note" id="note" value="" size="50" type="text" style="width:90%"></td>
+			</tr>
+          <tr height="50" class="b" align="left">
+            <td colspan="2"><center>
+                <input name="submit" class="btn" value="确定" type="submit">
+                <input name="reset" class="btn" value="重置" type="reset">
+              </center></td>
+          </tr>
+        </tbody></table>
+	    <center> 
+	    </center>
+    </form>
+  </td>
+  </tr>
+  </tbody>
+</td>
+      </tr>
+
+
+<tr bgcolor="#DEE5FA">
+<td align=center class=txlrow></td>
+</tr>
+</tbody></table>
+
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }?>
+</body>
+</html>

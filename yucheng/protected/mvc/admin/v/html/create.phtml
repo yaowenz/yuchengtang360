@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>添加帖子</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=cm_url::get('tq-img')?>/css/css.css">
+ </head>
+<body>
+<form action="" method="post">
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }else{?>
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tr>
+<th align=center style="height: 23px"><?php if($_GET['tt']) echo '<font style="color:yellow">《'.$_GET['tt'].'》</font> ';?>添加帖子:</th>
+</tr>
+</table>
+	<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+	<tr>
+		<td style="padding:10px">
+			帖子名称:<br/><br/>
+			<textarea id="vn1" name="html_name" rows="1" cols="" style="height:18px;width:200px;font-size:14px;color:blue;"><?=$_POST['html_name']?></textarea> 
+			&nbsp;&nbsp;<a href="javascript:;" onclick="this.href='/v-l.htm?tp=1&s='+encodeURI(document.getElementById('vn1').value);" style="color:red;font-size:16px;" target=_blank><b>检查帖子名称情况</b></a>
+		</td>
+	</tr>
+	</table>
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tr>
+<td align="center"><input style="height:50px;width:200px;" type="submit" value="确认添加"></td>
+</tr>
+</table>
+<?php }?>
+</form>
+</body>
+</html>

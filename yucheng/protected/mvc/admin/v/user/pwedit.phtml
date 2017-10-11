@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>用户管理</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=FILE_URL?>/css/css.css">
+ </head>
+<body> 
+
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tbody>
+<tr>
+<th align=center style="height: 23px">修改密码</th>
+</tr>
+
+	   <tr bgcolor="#DEE5FA">
+        <td align="center" class=txlrow> 
+  <tbody><tr>
+  <td valign="top">
+    <form action="" method="post" name="userform" onsubmit=""> 
+        <table class="table_area" align="center" cellpadding="3" cellspacing="1" width="98%">
+          <tbody>
+			<tr class="b" align="left">
+            <td width="80">旧密码</td>
+            <td><input class="box" name="op" id="op" value="" size="50" type="password"></td>
+			</tr>
+			<tr class="b" align="left">
+            <td width="80">新密码</td>
+            <td><input class="box" name="np" id="np" value="" size="50" type="password"></td> 
+			</tr>
+		  <tr class="b" align="left">
+            <td colspan="2"><center>
+                <input name="submit" class="btn" value="确定" type="submit">
+                <input name="reset" class="btn" value="重置" type="reset">
+              </center></td>
+          </tr>
+        </tbody></table>
+	    <center> 
+	    </center>
+    </form>
+  </td>
+  </tr>
+  </tbody>
+</td>
+      </tr>
+
+
+<tr bgcolor="#DEE5FA">
+<td align=center class=txlrow></td>
+</tr>
+</tbody></table>
+
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }?>
+</body>
+</html> 

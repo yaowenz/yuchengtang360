@@ -1,0 +1,109 @@
+<?php
+//$page_title=SITE_NAME;
+if($this->type=='z') $page_title='一周一珍';
+else $page_title='馆藏展品';
+require_once(global_info::$v_path_client.'/comm/m_head.phtml');
+?>
+	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
+</head>
+<body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="yzyz">
+	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
+	<div class="imx">
+		<ul class="listitem wp100">
+			<?php
+				if(!$this->request->m){
+			?>
+			<li id="top1" style="background:url('<?=$m3d_path?>images/p75.png') repeat-x center bottom,url(<?=$m3d_path?>images/yzyz.jpg) no-repeat center center;background-size:100% 15%,100% 100%"></li>
+			<?php
+				}
+				if($this->request->m==1){
+			?>
+			<li class="mn1">
+				<table>
+					<tr>
+						<td class="m1" align="center"><div class="mnl" style="background:url(<?=$m3d_path?>images/gc1.jpg) no-repeat;background-size:100%;"></div></td>
+						<td class="m2">
+								<table class="mh1">
+									<td class="mtt">明清瓷器</td>
+									<td><span>康熙</span></td>
+									<td><span>雍正</span></td>
+									<td><span>乾隆</span></td>
+								</table>
+								<div class="mh2">
+									明清瓷器是我国瓷器发展史上的极盛时期。彩秞品种丰富多彩，“其彩色，则霁红、矾红、霁青、粉青、冬青、紫绿、金、银、漆黑、杂彩，随意而施。”
+								</div>
+						</td>
+					<tr>
+				</table>
+			</li>
+			<li class="ttp" style="height:42px;margin:0 0 10px" onclick="history.length>2?history.go(-1):window.scrollTo(0,0);"></li>
+			<?php
+				}else if($this->request->m==2){
+			?>
+			<li class="mn1">
+				<table>
+					<tr>
+						<td class="m1" align="center"><div class="mnl" style="background:url(<?=$m3d_path?>images/gc2.jpg) no-repeat;background-size:100%;"></div></td>
+						<td class="m2">
+								<table class="mh1">
+									<td class="mtt">宋元瓷器</td>
+									<td><span>汝</span></td>
+									<td><span>官</span></td>
+									<td><span>哥</span></td>
+									<td><span>定</span></td>
+									<td><span>钧</span></td>
+								</table>
+								<div class="mh2">
+									宋元时期，精益求精的官窑工艺绝伦，注重实用的民窑简朴大方，融合异国风格的外销瓷特征，三者交相辉映，异彩纷呈，共同构成了宋元瓷器的灿烂文化。
+								</div>
+						</td>
+					<tr>
+				</table>
+			</li>
+			<li class="ttp" style="height:42px;margin:0 0 10px" onclick="history.length>2?history.go(-1):window.scrollTo(0,0);"></li>
+			<?php
+			}
+			foreach($this->l as $k=>$i){
+				$v=null;
+				if($i['koujin']) $v[]=array('口径',$i['koujin'],'毫米');
+				if($i['dijin']) $v[]=array('底径',$i['dijin'],'毫米');
+				if($i['height']) $v[]=array('高度',$i['height'],'毫米');
+				if($i['weight']) $v[]=array('重量',$i['weight'],'克');
+				if($i['tongkuan']) $v[]=array('通宽',$i['tongkuan'],'毫米');
+				if($i['fujin']) $v[]=array('腹径',$i['fujin'],'毫米');
+			?>
+			<li class="nr">
+				<a href="/v-d-i-<?=$i['id']?>.html">
+					<div class="rmg" style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/s/'.$i['img_name']?>) no-repeat center;background-size:auto 100%;"></div>
+					<div class="t1 wjd"><?=$i['name']?></div>
+					<table>
+						<?php
+							for($i1=0;$i1<6;$i1++){
+							if($v){
+						?>
+						<tr>
+							<td><?php if($v){$v0=array_shift($v);echo $v0[0].': '.$v0[1].' '.$v0[2];}?></td>
+							<td>&nbsp;</td>
+							<td><?php if($v){$v0=array_shift($v);echo $v0[0].': '.$v0[1].' '.$v0[2];}?></td>
+						<tr>
+						<?php }}?>
+					</table>
+				</a>
+			</li>
+			<li <?php if($k+1!=count($this->l)) echo 'class="ln2"';?>></li>
+			<?php }?>
+		</ul>
+		<?php require_once(global_info::$v_path_client.'/comm/m_foot.phtml');?>
+	</div>
+	<?php if($this->acl) echo '</form>';?>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		var i=document.getElementById("top1");
+		if(i) cw1(i,600,230);
+		gbc("mnl",210,248);
+		gbc("rmg",4,3);
+	}
+</script>
+<?php require_once(global_info::$v_path_client.'/comm/b_foot.phtml');?>

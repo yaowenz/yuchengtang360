@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head> <title>铁球管理</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="STYLESHEET" type="text/css" href="<?=FILE_URL?>/js/tree/css/tree.css">
+<link rel="stylesheet" href="<?=FILE_URL?>/css/css.css" type="text/css">  
+<script src="<?=FILE_URL?>/js/tree/dtree_c.js"></script>
+<style>
+BODY {BACKGROUND-COLOR: #FdF8FD;}
+A {
+	FONT: 12px 宋体; COLOR: #8D500F; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #4455AA!important;
+}
+</style>
+</head>
+
+<body> 
+<div class="open"><a href="javascript:d.openAll();" onFocus="this.blur()"
+>打开所有结点</a>&nbsp;|&nbsp;<a href="javascript: d.closeAll();" onFocus="this.blur()"
+>关闭所有结点</a></div>   	
+<script type="text/javascript">
+d = new dTree("d","<?=FILE_URL?>/js/tree/img/");
+d.add(0,-1,"御承堂管理员平台");
+
+d.add(1800,0,'基本管理');
+d.add(1801,1800,'添加艺术品','/admin-item-add.htm','','main');
+d.add(1811,1800,'艺术品管理','/admin-item-list.htm','','main');
+
+d.add(1100,0,'管理员管理');
+d.add(1105,1100,'修改密码','/admin-user-pwedit.html','','main'); 
+
+document.write(d); 
+d.openAll();
+</script>
+</body>
+</html>

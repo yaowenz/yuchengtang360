@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			<?php if($this->request->m=='add') echo '添加内容'; else echo '修改内容'; ?>
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="<?=cm_url::get('tq-img')?>/css/css.css">
+		<script src="<?=cm_url::get('tq-img')?>/js/jquery_compress.js">
+		</script>
+		<script src="<?=cm_url::get('tq-img')?>/js/kindeditor412/kindeditor-min.js">
+		</script>
+		<script src="<?=cm_url::get('tq-img')?>/js/kindeditor412/lang/zh_CN.js">
+		</script>
+	</head>
+	<body>
+		<table width="98%" border=0 align=center cellpadding=2 cellspacing=1
+		bordercolor="#799AE1" class=tableBorder>
+			<tbody>
+				<tr>
+					<th align=center style="height: 23px">
+						<?php if($_GET['tt']) echo '<font style="color:yellow">《'.$_GET['tt'].'》</font> ';?>
+						<?php if($this->request->m=='add') echo '添加内容'; else echo '修改内容'; ?>
+					</th>
+				</tr>
+				<tr bgcolor="#DEE5FA">
+					<td align="center" class=txlrow>
+						<tbody>
+							<tr>
+								<td valign="top">
+									<form method="post" action="">
+										<table class="table_area" align="center" cellpadding="3" cellspacing="1"
+										width="98%">
+											<tbody>
+													<tr class="b" align="left">
+														<td width="80" valign="top">
+															<br>
+															标题:
+														</td>
+														<td>
+															<br/>
+															<input type="text" name="title" style="width:500px;" value="<?=stripslashes($this->d['title'])?>">
+														</td>
+													</tr>
+													<tr class="b" align="left">
+														<td width="80" valign="top">
+															<br>
+															HTML代码:
+														</td>
+														<td>
+															<br/>
+															<textarea name="description" style="width:800px;height:400px;">
+																<?=stripslashes($this->d['html'])?>
+															</textarea>
+														</td>
+													</tr>
+													<tr class="b" align="left">
+														<td width="80" valign="top">
+															<br>
+															排序权重:
+														</td>
+														<td>
+															<br/>
+															<input type="text" name="right" style="width:50px;" value="<?=intval($this->d['right'])?>">
+														</td>
+													</tr>
+													<tr class="b" align="left">
+														<td colspan="2">
+															<center>
+																<input name="submit" class="btn" style="width:200px;height:40px;" value="确定<?php
+																if($this->request->m=='add') echo '添加内容';
+																else echo '修改内容';
+																?>" type="submit">
+															</center>
+														</td>
+													</tr>
+											</tbody>
+										</table>
+										<center>
+										</center>
+									</form>
+								</td>
+							</tr>
+						</tbody>
+					</td>
+				</tr>
+				<tr bgcolor="#DEE5FA">
+					<td align=center class=txlrow>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<?php if($this->res1){?>
+			<table width="98%" border=0 align=center cellpadding=2 cellspacing=1
+			bordercolor="#D73A42" class=tableBorder>
+				<tr>
+					<th align=center style="height: 23px;background-color:red">
+						<?=$this->res1?>
+					</th>
+				</tr>
+			</table>
+			<?php }?>
+	</body>
+
+</html>
+<script>
+	$(function() {
+		var editor = KindEditor.create('textarea[name="description"]', {
+			//items : ['source']
+		});
+	});
+</script>

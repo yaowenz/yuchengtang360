@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>图床</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=cm_url::get('tq-img')?>/css/css.css">
+ </head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }?>
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tr>
+<th align=center style="height: 23px">图床:</th>
+</tr>
+</table>
+	<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+	<tr>
+		<td style="padding:10px">
+			<input name="img1" type="file"/><input style="" type="submit" value="上传">
+		</td>
+	</tr>
+	</table>
+</form>
+</body>
+</html> 

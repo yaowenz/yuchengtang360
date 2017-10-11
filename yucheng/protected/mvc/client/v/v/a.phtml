@@ -1,0 +1,59 @@
+<?php
+//$page_title=SITE_NAME;
+$page_title='品鉴讲堂';
+require_once(global_info::$v_path_client.'/comm/m_head.phtml');
+?>
+	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
+</head>
+<body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="pjjt">
+	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
+	<div class="imx">
+		<ul class="listitem wp100">
+			<li><div class="aci" style="background:url('<?=$m3d_path?>images/p75.png') repeat-x center bottom,url(<?=$m3d_path?>images/ac1.jpg) no-repeat;background-size:100% 10%,100%;"></div></li>
+			<li class="pj1">
+				<a href="/v-b.html?v=5">
+					<table>
+						<tr>
+							<td>
+								<div class="pjt">雍正书房器件辨析</div>
+								<div class="pjc">
+									胤禛于康熙十七年十月三十（1678年12月13日）寅时出生于北京紫禁城永和宫，是康熙帝第四子。德妃乌雅氏所生。由于其生母乌雅氏出身低微，没有抚育的资格 ···
+								</div>
+								<div style="width:100%">
+									<div class="xq1"></div>
+								</div>
+							</td>
+						<tr>
+					</table>
+				</a>
+			</li>
+			<li class="ln2"></li>
+			<li><div class="aci" style="background:url('<?=$m3d_path?>images/p75.png') repeat-x center bottom,url(<?=$m3d_path?>images/ac2.jpg) no-repeat;background-size:100% 10%,100%;"></div></li>
+			<li class="pj1">
+				<table>
+					<tr>
+						<td>
+							<div class="pjt">元青花细节特点</div>
+							<div class="pjc">
+								胤禛于康熙十七年十月三十（1678年12月13日）寅时出生于北京紫禁城永和宫，是康熙帝第四子。德妃乌雅氏所生。由于其生母乌雅氏出身低微，没有抚育的资格 ···
+							</div>
+							<div style="width:100%">
+								<div class="xq1"></div>
+							</div>
+						</td>
+					<tr>
+				</table>
+			</li>
+			<li></li>
+		</ul>
+		<?php require_once(global_info::$v_path_client.'/comm/m_foot.phtml');?>
+	</div>
+	<?php if($this->acl) echo '</form>';?>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		gbc("aci",600,230);
+	}
+</script>
+<?php require_once(global_info::$v_path_client.'/comm/b_foot.phtml');?>

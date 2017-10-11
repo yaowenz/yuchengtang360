@@ -1,0 +1,32 @@
+<script type="text/javascript">
+	function cw1(i,x,y)
+	{
+		var w=i.offsetWidth;
+		var h=w*y/x;
+		i.style.height=h+"px";
+	}
+	function gbc(p,x,y) {
+		var tags = tags || document.getElementsByTagName("div");
+		var list = [];
+		for( var k in tags)
+		{
+			var tag = tags[k];
+			if(tag.className == p) {
+				cw1(tag,x,y);
+				list.push(tag);
+			}
+		}
+		return list;
+	}
+</script>
+
+<?php //百度统计?>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b09bf58e0c422d4531c4a24846ee7657";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>

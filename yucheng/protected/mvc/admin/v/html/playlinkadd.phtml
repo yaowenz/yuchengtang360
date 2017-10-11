@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title><?php if($this->action=='playlinkedit') echo '修改';else echo '新增';?>链播资源</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=cm_url::get('tq-img')?>/css/css.css">
+ </head>
+<body>
+<form action="" method="post">
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }else{?>
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tr>
+<th align=center style="height: 23px"><?php if($_GET['tt']) echo '<font style="color:yellow">《'.$_GET['tt'].'》</font> ';?><?php if($this->action=='playlinkedit') echo '修改';else echo '新增';?>链播资源:</th>
+</tr>
+</table>
+	<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+	<tr>
+		<td style="padding:10px">
+			组号:<br/><br/>
+			<textarea name="series" rows="1" cols="" style="height:18px;width:50px;font-size:14px;color:blue;"><?php if(intval($this->d['series'])<1) echo '1';else echo intval($this->d['series']);?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			编号:<br/><br/>
+			<textarea name="episode" rows="1" cols="" style="height:18px;width:50px;font-size:14px;color:blue;"><?php if($this->action=='playlinkedit') echo intval($this->d['episode']); else echo intval($this->d['episode'])+3;?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			资源标题:(可不填)<br/><br/>
+			<textarea name="title" rows="1" cols="" style="height:18px;width:100%;font-size:14px;color:blue;"><?=$this->d['title']?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			资源URL:<br/><br/>
+			<textarea name="url" rows="1" cols="" style="height:18px;width:100%;font-size:14px;color:blue;"><?=$this->d['url']?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			资源站图标URL:(可不填)<br/><br/>
+			<textarea name="site_logo" rows="1" cols="" style="height:18px;width:100%;font-size:14px;color:blue;"><?=$this->d['site_logo']?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			资源站名称:(可不填)<br/><br/>
+			<textarea name="site_name" rows="1" cols="" style="height:18px;width:100%;font-size:14px;color:blue;"><?=$this->d['site_name']?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			时长(可不填):<br/><br/>
+			<textarea name="duration" rows="1" cols="" style="height:18px;width:50px;font-size:14px;color:blue;"><?=$this->d['duration']?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			类名:(可不填)<br/><br/>
+			<textarea name="type" rows="1" cols="" style="height:18px;width:50px;font-size:14px;color:blue;"><?=$this->d['type']?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			资源时间:<br/><br/>
+			<textarea name="onlinetime" rows="1" cols="" style="height:18px;width:250px;font-size:14px;color:blue;"><?php if($this->d['onlinetime']) echo date('Y-m-d',$this->d['onlinetime']);else echo date('Y-m-d',time());?></textarea>
+		</td>
+	</tr>
+	</table>
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tr>
+<td align="center"><input style="height:50px;width:200px;" type="submit" value="确认"></td>
+</tr>
+</table>
+<?php }?>
+</form>
+</body>
+</html>

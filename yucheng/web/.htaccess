@@ -1,0 +1,71 @@
+RewriteEngine On
+RewriteBase /
+# The following rule tells Apache that if the requested filename
+# exists, simply serve it.
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+# The following rewrites all other queries to index.php. The 
+# condition ensures that if you are using Apache aliases to do
+# mass virtual hosting, the base path will be prepended to 
+# allow proper resolution of the index.php file; it will work
+# in non-aliased environments as well, providing a safe, one-size 
+# fits all solution.
+RewriteCond %{REQUEST_URI}::$1 ^(/.+)(.+)::\2$
+RewriteRule ^(.*) - [E=BASE:%1]
+RewriteRule ^(.*)$ %{ENV:BASE}index.php [NC,L]
+#php_value upload_max_filesize "2M"
+
+# BEGIN Compress text files
+<ifModule mod_deflate.c>
+  <filesMatch "\.(css|js|x?html?|php)$">
+    SetOutputFilter DEFLATE
+  </filesMatch>
+</ifModule>
+# END Compress text files
+
+# BEGIN Expire headers
+<ifModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 seconds"
+  ExpiresByType image/x-icon "access plus 12960000 seconds"
+  ExpiresByType image/jpeg "access plus 12960000 seconds"
+  ExpiresByType image/png "access plus 12960000 seconds"
+  ExpiresByType image/gif "access plus 12960000 seconds"
+  ExpiresByType application/x-shockwave-flash "access plus 12960000 seconds"
+  ExpiresByType text/css "access plus 12960000 seconds"
+  ExpiresByType text/javascript "access plus 86400 seconds"
+  ExpiresByType application/javascript "access plus 86400 seconds"
+  ExpiresByType application/x-javascript "access plus 86400 seconds"
+  ExpiresByType text/html "access plus 3600 seconds"
+  ExpiresByType application/xhtml+xml "access plus 3600 seconds"
+</ifModule>
+# END Expire headers
+
+# BEGIN Cache-Control Headers
+<ifModule mod_headers.c>
+  <FilesMatch "\.(eot|json|svg|ttf|woff|woff2)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+
+  <filesMatch "\.(cs|ico|jpe?g|png|gif|swf|mp4|flv|mov)$">
+    Header set Cache-Control "max-age=12960000, public"
+  </filesMatch>
+
+  <filesMatch "\.(js)$">
+      Header set Cache-Control "max-age=86400, must-revalidate"
+    </filesMatch>
+
+  <filesMatch "\.(x?html?)$">
+    Header set Cache-Control "max-age=86400, private, must-revalidate"
+  </filesMatch>
+</ifModule>
+# END Cache-Control Headers
+
+# BEGIN Turn ETags Off
+<ifModule mod_headers.c>
+  Header unset ETag
+</ifModule>
+FileETag None
+# END Turn ETags Off

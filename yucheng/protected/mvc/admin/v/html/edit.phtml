@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>内容编辑</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=cm_url::get('tq-img')?>/css/css.css">
+ </head>
+<body>
+<form action="" method="post">
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }?>
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tr>
+<th align=center style="height: 23px">内容编辑:</th>
+</tr>
+</table>
+	<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+	<tr>
+		<td style="padding:10px">
+			<textarea name="edit1" rows="" cols="" style="height:500px;width:100%;font-size:14px;color:blue;"><?=$this->info['html']?></textarea>
+			<input type="hidden" name="key1" value="<?=$_REQUEST['key1']?>">
+		</td>
+	</tr>
+	</table>
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tr>
+<td align="center"><input style="height:50px;width:200px;" type="submit" value="确认"></td>
+</tr>
+</table>
+</form>
+</body>
+</html> 

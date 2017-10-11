@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>添加球队</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=FILE_URL?>/css/css.css">
+ </head>
+<body> 
+
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tbody>
+<tr>
+<th align=center style="height: 23px">添加球队</th>
+</tr>
+
+	   <tr bgcolor="#DEE5FA">
+        <td align="center" class=txlrow> 
+  <tbody><tr>
+  <td valign="top">
+    <form action="" method="post" name="userform" onsubmit=""> 
+        <table class="table_area" align="center" cellpadding="3" cellspacing="1" width="98%">
+          <tbody>
+			<tr height="80" class="b" align="left">
+            <td width="80">中文名</td>
+            <td><input class="box" name="u_c" id="u_c" value="" size="50" type="text"></td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">英文名</td>
+            <td><input class="box" name="u_e" id="u_e" value="" size="150" type="text"></td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">来自</td>
+            <td><input class="box" name="from" id="from" value="NBA" size="50" type="text"></td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">备注</td>
+            <td><input class="box" name="note" id="note" value="" size="50" type="text"></td>
+			</tr>
+          <tr height="50" class="b" align="left">
+            <td colspan="2"><center>
+                <input name="submit" class="btn" value="确定" type="submit">
+                <input name="reset" class="btn" value="重置" type="reset">
+              </center></td>
+          </tr>
+        </tbody></table>
+	    <center> 
+	    </center>
+    </form>
+  </td>
+  </tr>
+  </tbody>
+</td>
+      </tr>
+
+
+<tr bgcolor="#DEE5FA">
+<td align=center class=txlrow></td>
+</tr>
+</tbody></table>
+
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }?>
+</body>
+</html>

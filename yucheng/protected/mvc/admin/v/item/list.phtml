@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>艺术品列表</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=FILE_URL?>/css/css.css">
+	<style>
+		.t1 div{
+			display:block;width:100px;height:70px
+		}
+	</style>
+ </head>
+<body> 
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tbody>
+<tr> 
+<th align=center style="height: 23px">艺术品列表</th>
+</tr> 
+
+<tr bgcolor="#DEE5FA">
+<td align="center" class=txlrow> 
+	<tbody>
+	<?php if(!$_GET['out']){?>
+	<tr bgcolor="#DEE5FA">
+	<td align=center class=txlrow style="padding:5px;font-size:14px">
+	<a href="/admin-item-add.htm" style="color:red">添加艺术品</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin-item-list.htm?act=slt" style="color:red">自动添加缩略图(提取小图第一幅)</a>
+	</td>
+	</tr>
+	<?php }?>
+	<tr bgcolor="#DEE5FA">
+	<td valign="top">
+
+
+	<table width="100%" cellspacing="1" cellpadding="2" class="tableBorder">
+		<tbody><tr align="center" bgcolor='#799ae1' style='color:#fff;'>  
+          <td align="center" width="25">id</td>
+		  <td align="center" width="100">缩略图</td>
+		  <td align="center" width="50">二维码</td>
+		  <td align="center" width="20%">名称</td>
+          <td align="center">文字介绍</td>
+		  <?php if(!$_GET['out']){?>
+		  <td align="center" width="20%">编辑</td>
+		  <td align="center" width="10%">状态</td>
+		  <?php }?>
+        </tr>
+
+	  <?php 
+		foreach($this->item_list as $k => $i)
+		{
+			$t_b_url=null;
+			if($i['img_name']){
+				if(strpos('x'.$i['img_name'],'/'))
+				{
+					$t_b_url=FILE_URL .$i['img_name'];
+				}
+				else $t_b_url=M_PIC_URL.'/'.$i['id'].'/s/'.$i['img_name'];
+			}
+	  ?>
+  		 <tr class="b">
+			<td align="center"><a href="http://<?=MAIN_DOMAIN?>/v-d-i-<?=$i['id']?>.html" style="color:blue" target="_blank"><?=$i['id']?></a></td>
+			<td class="t1" align="center">
+				<?php if($t_b_url){?><div style="background:url(<?=$t_b_url?>) no-repeat center;background-size:100% auto;"></div><?php }?>
+			</td>
+			<td align="center">
+				<a href="http://<?=MAIN_DOMAIN?>/v-m22-v-<?=base64_encode('http://'.MAIN_DOMAIN.'/v-d-i-'.$i['id'].'-f-m2.html')?>.html" style="color:blue" target="_blank">显示</a>
+			</td>
+			<td align="center"><?=$i['name']?></td>
+			<td align="left"><?=$i['note']?></td>
+			<?php if(!$_GET['out']){?>
+			<td align="center">
+				<a href="/admin-item-edit-id-<?=$i['id']?>.html" style="color:blue" target="_blank">编辑基本</a>
+				<a href="/v-d-i-<?=$i['id']?>.html" style="color:blue" target="_blank">编辑手机微信版</a>
+				&nbsp;
+				<a href="/admin-item-delete-id-<?=$i['id']?>.html" onclick="return confirm('确认要删除吗? 请谨慎!');" style="color:red">!删除!</a>
+			</td>
+			<td align="center">
+				<?php
+					if($i['state']==0) echo '未上架';
+					else if($i['state']==1) echo '正常';
+					else echo $i['state'];
+					if($i['state']!=1)
+					{
+				?>
+				&nbsp;
+				<a href="/admin-item-modify-id-<?=$i['id']?>-state-1.html" style="color:red">上架</a>
+				<?php 
+					}
+					if($i['state']!=0)
+					{
+				?>
+				&nbsp;
+				<a href="/admin-item-modify-id-<?=$i['id']?>-state-0.html" onclick="return confirm('确认要下架吗?');" style="color:red">下架</a>
+				<?php }?>
+			</td>
+			<?php }?>
+         </tr>
+      <?php }?>
+      <!-- -->
+      </tbody></table> 
+
+</td>
+</tr>
+</tbody>
+</td>
+</tr>
+
+<?php if(!$_GET['out']){?>
+<tr bgcolor="#DEE5FA">
+<td align=center class=txlrow style="padding:20px;font-size:16px">
+<a href="/admin-item-add.htm" style="color:red">添加艺术品</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin-item-list.htm?act=slt" style="color:red">自动添加缩略图(提取小图第一幅)</a>
+</td>
+</tr>
+<?php }?>
+</tbody></table>
+
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }?>
+</body>
+</html>

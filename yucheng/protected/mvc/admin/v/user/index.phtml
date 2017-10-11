@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>用户管理</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=FILE_URL?>/css/css.css">
+ </head>
+<body> 
+
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tbody>
+<tr> 
+<th align=center style="height: 23px">管理员列表</th>
+</tr> 
+
+<tr bgcolor="#DEE5FA">
+<td align="center" class=txlrow> 
+<tbody><tr bgcolor="#DEE5FA">
+<td valign="top">
+   
+
+
+
+
+
+
+<table width="100%" cellspacing="1" cellpadding="2" class="tableBorder" >
+        <tbody><tr align="center" bgcolor='#799ae1' style='color:#fff;'>  
+          <td align="center">用户名</td>
+          <td align="center">角色</td>
+          <td align="center">描述</td>
+		  <td align="center">编辑</td> 
+        </tr>
+      <!--   -->
+	  <?php foreach($this->user_list as $k => $i){?>
+  		 <tr class="b">
+ 	  	  <td align="center"><?=$i['user_name']?></td> 
+ 	      <td align="center"><?=$i['acl']?></td>
+ 	      <td align="center"><?=$i['desc']?></td>
+		  <td align="center"><a href="/admin-user-edit-id-<?=$i['id']?>.html">编辑</a> <a href="/admin-user-delete-id-<?=$i['id']?>.html">删除</a> </td> 
+         </tr>
+      <?php }?>
+      <!-- -->
+      </tbody></table> 
+
+ 
+
+
+
+
+
+</td>
+</tr>
+</tbody>
+</td>
+</tr>
+
+
+<tr bgcolor="#DEE5FA">
+<td align=center class=txlrow></td>
+</tr>
+</tbody></table>
+
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }?>
+</body>
+</html>

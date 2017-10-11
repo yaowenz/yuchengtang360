@@ -1,0 +1,318 @@
+<?php
+require_once COMM_PATH .'/lib/jssdk.php';
+$jssdk = new JSSDK(WX_APPID,WX_APPSEC);
+$signPackage = $jssdk->GetSignPackage();
+
+$i=$this->detail;
+//判断3d 图片是非存在
+$m_3d2 = '';
+$has3d = false;
+if(file_exists(cm_url::get('yucheng-img-path').'/m3d/3dpic/'.$i['id'])) {
+    $has3d = true;
+    if(trim($i['m_3d'])) {
+        $m_3d=trim($i['m_3d']);
+    } else {
+    	/*
+    		rdp	阻力
+    		p1	浏览器宽度平铺
+    		p2	右下方增加平铺按钮
+    		p3	加载时显示遮罩
+    		p4	是否显示loading过程
+    		p5	是否运行全屏
+    	*/
+    	$m_3d=<<<AAA
+    	  var show3d;
+    	  function init1() {
+    		var xn = 20;
+    		var yn = 9;
+    		var xr = true;
+    		var yr = true;
+    		var xs = 0.05;
+    		var ys = 0.03;
+    		var x0 = 0;
+    		var y0 = 4;
+    		var minz = 0.3;
+    		var maxz = 1.3;
+    		var defz = 1;
+    		var rdp = 0.95;
+    		var p1 = true;
+    		var p2 = false;
+    		var p3 = false;
+    		var p4 = true;
+    		var p5 = false;
+    		
+    		var p_when = 5;
+    		var px1 = 0;
+    		var px2 = 0;
+    		var py1 = 0;
+    		var py2 = 0;
+    
+    		var r01= 0;
+    		var r02= 0;
+    		var rtop1=0;
+    		var rtop2=0;
+    		var qsx1 =0;
+    		var qx1 = 0;
+    		var qsx2 =0;
+    		var qx2 = 0;
+    
+    		var xr1 = 0;
+    		var xr2 = 0;
+    		var yr1 = 0;
+    		var yr2 = 0;
+    
+    		var psx1 = 0;
+    		var cx1 = 0;
+    		var cx01 = 0;
+    		var psy1 = 0;
+    		var cy1 = 0;
+    		var cy01 = 0;
+    		var psx2 = 0;
+    		var cx2 = 0;
+    		var cx02 = 0;
+    		var psy2 = 0;
+    		var cy2 = 0;
+    		var cy02 = 0;
+    
+    		show3d = new show3d("s3d1","item_i_id",400,600,"#000",xn,yn,xr,yr,xs,ys,x0,y0,minz,maxz,rdp,p1,p2,p3,"jpg",p4,"",p5,defz,p_when,px1,py1,px2,py2,r01,r02,xr1,yr1,xr2,yr2,psx1,cx1,psy1,cy1,psx2,cx2,psy2,cy2,cx01,cy01,cx02,cy02,qsx1,qx1,qsx2,qx2,rtop1,rtop2);
+    	  }
+    	  window.onload = init1;
+AAA;
+    }
+    $m_3d2=str_replace('item_i_id',FILE_URL.'/m3d/3dpic/'.$i['id'],$m_3d);
+}
+$page_title=SITE_NAME;
+require_once(global_info::$v_path_client.'/comm/m_head.phtml');
+?>
+	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
+	<script type="text/javascript" src="<?=$m3d_path?>s3d/s3d.js?v=5<?=CSS_VERSION?>"></script>
+	<script type="text/javascript"><?=$m_3d2?></script>
+</head>
+<body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="bdtl">
+	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
+	<div class="imx">
+		<?php
+			if($this->acl)
+			{
+				echo '<div style="color:blue;font-size:16px"><br><br><br>';
+				/*
+				//判断3d 图片是非存在
+				if(!file_exists(cm_url::get('yucheng-img-path').'/m3d/3dpic/'.$i['id']))
+				{
+					echo '<br/>&nbsp;&nbsp;还没有手机3d图片，请上传3d图片ZIP包：';
+				}
+				else
+				{
+					echo '<br/>&nbsp;&nbsp;修改3d图片ZIP包,不需修改请留空，修改后原来的图片将被删除：';
+				}
+				echo '<br/><br/>&nbsp;&nbsp;<input type="file" name="m3dzip" style="width:50%;height:40px">';
+				*/
+
+				//判断3d 图片是非存在
+				if(!file_exists(cm_url::get('yucheng-img-path').'/m3d/3dpic/'.$i['id']))
+				{
+					echo '<br/>&nbsp;&nbsp;还没有手机3d图片! 请通过sFTP等工具上传到图片服务器如下路径：<br/>';
+				}
+				else
+				{
+					echo '<br/>&nbsp;&nbsp;要修改3d图片？请通过sFTP等工具修改图片服务器路径里的图片：<br/>';
+				}
+				echo '<br/>&nbsp;&nbsp;外网:&nbsp;&nbsp;'.cm_url::get('yucheng-img-path').'/m3d/3dpic/'.$i['id'];
+				echo '<br/><br/>&nbsp;&nbsp;内网:&nbsp;&nbsp; \\\\192.168.10.212\\sharefiles\\httpd\\img_360antinque_com\\m3d\\3dpic\\'.$i['id'];
+				echo '<br/><br/>&nbsp;&nbsp;手机版3d参数文本：<br/><br/>&nbsp;&nbsp;<textarea spellcheck="false" name="m_3d" rows="57" style="padding:15px;width:90%;font-size:16px">'.$m_3d.'</textarea>';
+				echo '<br/>&nbsp;&nbsp;<input type="submit" value="确认提交!" name="step1" style="width:90%;height:40px">';
+				echo '</div>';
+			}
+		?>
+		<div class="wxtp" id="wtp">
+			<?php foreach($this->l as $k=>$i0){?>
+			<a href="/v-d-i-<?=$i0['id']?>.html"><div style="background:url(<?=M_PIC_URL.'/'.$i0['id'].'/s/'.$i0['img_name']?>) no-repeat center;background-size:auto 100%;"></div></a>
+			<?php }?>
+		</div>
+		<script type="text/javascript">
+			if(/iPhone/i.test(navigator.userAgent))
+			{
+				im1=document.getElementById("wtp");
+				im1.style.height="60px";
+				im1.style.padding="9px";
+				im1.style.background="#29282D";
+			}
+		</script>
+		<ul class="listitem">
+			<li class="dl1">
+				<?php
+					echo $i['name'];
+					if($this->acl)
+					{
+						echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:blue;font-size:16px" href="/admin-item-edit-id-'.$i['id'].'.html" target="_blank">编辑基本信息</a>';
+					}
+				?>
+				<a class="dr1" href="/v-m.html?forwxsbug3">&nbsp;</a>
+			</li>
+			<li class="dl2">
+				<?php
+					if($i['height']) echo '高:'.$i['height'].'毫米';
+					if($i['weight']) echo ' | 重:'.$i['weight'].'克';
+					if($i['koujin']) echo ' | 口:'.$i['koujin'].'毫米';
+					if($i['dijin']) echo ' | 底:'.$i['dijin'].'毫米';
+				?>
+			</li>
+			<?php if ($has3d) : ?>
+			<li id="dl4">
+				<span id="spn3"></span>
+				<span id="spn1"></span>
+				<span id="spn2"></span>
+				<?php /*?><span id="spn4"></span><?php */?>
+				<span id="spn5" onclick="document.getElementById('alt0').style.display='block'"></span><?php if(is_dir(M_UPLOAD_PATH.'/m3d/3dpic/'.$i['id'].'/img_m_out_b')){?>
+				<span id="spn6" onclick="var t3d=document.getElementById('backbuffer');var ts1='';if(t3d.style.cssText.indexOf('180d')>0) ts1='d';tbf=show3d.s+'/img_m_out_b'+ts1+t3d.src.replace(show3d.s,'');if(wx_ready) {wx.previewImage({current:tbf,urls:[tbf]});return false;}"></span>
+				<?php }?>
+			</li>
+			<li id="dl3">
+				<div id="s3d1"></div>
+			</li>
+			<?php else: ?>
+			<li>
+				<a href="/v-img.html?p=b&id=<?=$i['id']?>&n=<?=$k?>" onclick="if(wx_ready) {wx.previewImage({current:h+'/b/<?=$p?>',urls:p_urls});return false;}"><img src="<?=M_PIC_URL.'/'.$i['id'].'/b/cover.jpg'?>" width="100%"></div></a>
+			</li>
+			<?php endif;?>
+			<?php
+				if($i['name'] && trim($i['note'])){
+			?>
+			<li>
+				<hr class="ln1"></hr>
+			</li>
+			<li class="js1">
+				<?php
+					echo $i['name'].'介绍';
+					if($this->acl)
+					{
+						echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:blue;font-size:16px" href="/admin-item-edit-id-'.$i['id'].'.html" target="_blank">编辑标题和简介等基本信息</a>';
+					}
+				?>
+			</li>
+			<li class="dl2">
+				<?=$i['note']?>
+			</li>
+			<?php
+				}
+				if($this->acl)
+				{
+					echo '<li style="color:blue;font-size:16px">视频修改或添加:<br/>请将视频文件(640.mp4) 和缩略图(1.jpg)(建议300*200px) 上传到图片服务器: <br/>'.cm_url::get('yucheng-img-path').'/m3d/movie/'.$i['id'].' <br/>目录下</li>';
+				}
+			?>
+			<li id="vd1"></li>
+			<?php
+				if($this->acl)
+				{
+					echo '<li style="color:blue;font-size:16px">局部展示图修改或添加:<br/>请将图片文件(.jpg) 上传到图片服务器: <br/>'.cm_url::get('yucheng-img-path').'/m3d/pic/'.$i['id'].'<br/>目录下:其中小图 /s 目录下，大图 /b 目录下。</br>大小图文件名请一致，不要使用中文和特殊符号，小图像素 160*90 ,大图像素建议竖版 1790 * 2685<br/><br/></li>';
+				}
+				
+				if($i['pics'])
+				{
+			?>
+			<li>
+				<hr class="ln1"></hr>
+			</li>
+			<li class="js1">
+				局部展示图
+			</li>
+			<li class="tzq2">
+				<?php foreach($i['pics'] as $k=>$p){?>
+				<a href="/v-img.html?p=b&id=<?=$i['id']?>&n=<?=$k?>" onclick="if(wx_ready) {wx.previewImage({current:h+'/b/<?=$p?>',urls:p_urls});return false;}"><div class="dmg" style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/s/'.$p?>) no-repeat;background-size:100%;"></div></a>
+				<?php }?>
+				<div style="clear:both"></div>
+			</li>
+			<?php
+				}
+			/*?>
+			<li class="js1">
+				<hr class="ln1"></hr>
+				微距展示图
+			</li>
+			<li class="tzq2">
+				<a href="/v-img.html?p=demo1_b&n=Still0570" onclick="if(wx_ready) {wx.previewImage({current:h+'/b/Still0570.jpg',urls:p_urls2});return false;}"><div class="dmg" style="background:url(<?=$pic_s_path?>Still0570.jpg) no-repeat;background-size:100%;"></div></a>
+				<a href="/v-img.html?p=demo1_b&n=Still0571" onclick="if(wx_ready) {wx.previewImage({current:h+'/b/Still0571.jpg',urls:p_urls2});return false;}"><div class="dmg" style="background:url(<?=$pic_s_path?>Still0571.jpg) no-repeat;background-size:100%;"></div></a>
+				<a href="/v-img.html?p=demo1_b&n=Still0573" onclick="if(wx_ready) {wx.previewImage({current:h+'/b/Still0573.jpg',urls:p_urls2});return false;}"><div class="dmg" style="background:url(<?=$pic_s_path?>Still0573.jpg) no-repeat;background-size:100%;"></div></a>
+				<div class="dmg"></div>
+			</li>
+			<?php */?>
+		</ul>
+		<?php /*?>
+		<hr class="ln1"></hr>
+		<ul class="listitem wp100 wz1">
+			<li>
+				<span class="jt">►</span> 关于藏品的文章01
+				<span class="rt1">
+					2016.01.20
+				</span>
+			</li>
+			<li>
+				<span class="jt">►</span> 关于藏品的文章02
+				<span class="rt1">
+					2016.01.21
+				</span>
+			</li>
+		</ul>
+		<?php */?>
+		<ul class="listitem wp100 sc1">
+			<li class="hd1"></li>
+			<li class="wm2">
+				<img src="<?=$m3d_path?>images/wm2.jpg"></img>
+			</li>
+			<li class="ttp" onclick="history.length>2?history.go(-1):window.scrollTo(0,0);"></li>
+		</ul>
+		<?php require_once(global_info::$v_path_client.'/comm/m_foot.phtml');?>
+	</div>
+	<?php if($this->acl) echo '</form>';?>
+	<div id="alt0">
+		<div id="alt1"><a class="cls" href="javascript:;" onclick="this.parentNode.parentNode.style.display='none';">×</a>
+			<div class="ah1"><?=$i['name']?></div>
+			<div class="ah2"><span>扫一扫 / 分享</span></div>
+			<div class="ah3"><img src="/v-m2.html?1"></img></div>
+		</div>
+	</div>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+	  <?php
+	  /*
+	   * 注意：
+	   * 1. 所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+	   * 2. 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+	   * 3. 常见问题及完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
+	   *
+	   * 开发中遇到问题详见文档“附录5-常见错误及解决办法”解决，如仍未能解决可通过以下渠道反馈：
+	   * 邮箱地址：weixin-open@qq.com
+	   * 邮件主题：【微信JS-SDK反馈】具体问题
+	   * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
+	   */
+	  ?>
+	  var h="<?=M_PIC_URL.'/'.$i['id']?>";
+	  var wx_ready=false;
+	  var p_urls=[<?php foreach($i['pics'] as $k=>$p){echo "h+'/b/".$p."',";}?>];
+	  //var p_urls2=[h+'/b/Still0570.jpg',h+'/b/Still0571.jpg',h+'/b/Still0573.jpg'];
+	  wx.config({
+		debug: false,
+		appId: '<?php echo $signPackage["appId"];?>',
+		timestamp: <?php echo $signPackage["timestamp"];?>,
+		nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+		signature: '<?php echo $signPackage["signature"];?>',
+		jsApiList: [
+		  'previewImage'
+		]
+	  });
+	  wx.ready(function () {
+		wx_ready=true;
+	  });
+	</script>
+</body>
+</html>
+<?php require_once(global_info::$v_path_client.'/comm/b_foot.phtml');?>
+<script type="text/javascript">
+	gbc("dmg",16,9);
+	<?php
+		if(is_file(realpath(cm_url::get('yucheng-img-path').'/m3d/movie/'.$i['id']).'/640.mp4')){
+	?>
+	var video='<video width="100%" height="280" src="<?=FILE_URL.'/m3d/movie/'.$i['id']?>/640.mp4?8" poster="<?=FILE_URL.'/m3d/movie/'.$i['id']?>/1.jpg" type="video/mp4" controls="controls" preload="none" loop="loop"></video>';
+	setTimeout(function(){document.getElementById("vd1").innerHTML=video;},2500);
+	<?php }?>
+</script>

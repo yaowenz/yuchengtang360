@@ -1,0 +1,53 @@
+<?php
+//$page_title=SITE_NAME;
+$page_title='雍正书房器件辨析';
+require_once(global_info::$v_path_client.'/comm/m_head.phtml');
+?>
+	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
+</head>
+<body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="pjjt">
+	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
+	<div class="imx">
+		<ul class="listitem wp100">
+			<li><div class="aci" style="background:url('<?=$m3d_path?>images/p75.png') repeat-x center bottom,url(<?=$m3d_path?>images/ac1.jpg) no-repeat;background-size:100% 10%,100%;"></div></li>
+			<li class="pj1">
+				<table>
+					<tr>
+						<td>
+							<div class="pjt">雍正书房器件辨析</div>
+							<div class="pjc">
+								胤禛于康熙十七年十月三十（1678年12月13日）寅时出生于北京
+								紫禁城永和宫，是康熙帝第四子。德妃乌雅氏所生。
+								由于其生母乌雅氏出身低微，没有抚育的资格。<br/><br/>
+								此外，清初时后宫也不允许生母抚育自己的儿子，因此胤禛满月后
+								由佟贵妃抚养。<br/><br/>
+								康熙帝曾评价幼年的胤禛“喜怒不定”，后经胤禛请求，于康熙四
+								十一年（1702年）撤此考语。<br/><br/>
+								因性情急躁，父皇康熙帝用“戒急用忍”训喻他。<br/><br/>
+								胤禛早年随康熙巡历四方。<br/><br/>
+								康熙三十七年（1698年）封贝勒。
+							</div>
+						</td>
+					<tr>
+				</table>
+			</li>
+			<li></li>
+		</ul>
+		<ul class="listitem wp100 sc1">
+			<li class="hd1"></li>
+			<li class="wm2">
+				<img src="<?=$m3d_path?>images/wm2.jpg"></img>
+			</li>
+			<li class="ttp" onclick="history.length>2?history.go(-1):window.scrollTo(0,0);"></li>
+		</ul>
+		<?php require_once(global_info::$v_path_client.'/comm/m_foot.phtml');?>
+	</div>
+	<?php if($this->acl) echo '</form>';?>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		gbc("aci",600,230);
+	}
+</script>
+<?php require_once(global_info::$v_path_client.'/comm/b_foot.phtml');?>

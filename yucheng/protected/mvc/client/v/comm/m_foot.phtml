@@ -1,0 +1,15 @@
+<div class="ftzw"></div>
+<nav class="menubar">
+	<a class="menu<?php if($this->action=='index') echo ' sel';?>" data-role="tab" href="/index.html?for_wx_s_bug5" data-toggle="article">
+		<span class="menu-icon iconfont i-md1">御承堂</span>
+	</a>
+	<a class="menu<?php if($this->action=='l' && $this->type=='z') echo ' sel';?>" data-role="tab" href="/v-l-t-z.html?for_wx_s_bug6" data-toggle="article">
+		<span class="menu-icon iconfont i-md2">一周一珍</span>
+	</a>
+	<a class="menu<?php if($this->action=='d' || $this->action=='m' || ($this->action=='l' && $this->type!='z')) echo ' sel';?>" data-role="tab" href="/v-m.html?for_wx_s_bug3" data-toggle="article">
+		<span class="menu-icon iconfont i-md3">馆藏展品</span>
+	</a>
+	<?php /*?><a class="menu<?php if($this->action=='b' || $this->action=='a') echo ' sel';?>" data-role="tab" href="/v-a.html?for_wx_s_bug4" data-toggle="article">
+		<span class="menu-icon iconfont i-md4">品鉴讲堂</span>
+	</a><?php */?>
+</nav>

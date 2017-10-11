@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>编辑播放资源</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=cm_url::get('tq-img')?>/css/css.css">
+ </head>
+<body>
+<form action="" method="post">
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }else{?>
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tr>
+<th align=center style="height: 23px"><?php if($_GET['tt']) echo '<font style="color:yellow">《'.$_GET['tt'].'》</font> ';?>编辑播放资源:</th>
+</tr>
+</table>
+	<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+	<tr>
+		<td style="padding:10px">
+			组号:<br/><br/>
+			<textarea name="series" rows="1" cols="" style="height:18px;width:50px;font-size:14px;color:blue;"><?=$this->d['series']?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			编号:<br/><br/>
+			<textarea name="episode" rows="1" cols="" style="height:18px;width:50px;font-size:14px;color:blue;"><?=$this->d['episode']?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			资源标题:<br/><br/>
+			<textarea name="episode_name" rows="1" cols="" style="height:18px;width:100%;font-size:14px;color:blue;"><?=$this->d['episode_name']?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px">
+			资源字符串:<br/><br/>
+			<textarea name="video_key" rows="1" cols="" style="height:18px;width:100%;font-size:14px;color:blue;"><?=$this->d['video_key']?></textarea>
+		</td>
+	</tr>
+	</table>
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tr>
+<td align="center"><input style="height:50px;width:200px;" type="submit" value="确认"></td>
+</tr>
+</table>
+<?php }?>
+</form>
+</body>
+</html> 

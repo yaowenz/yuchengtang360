@@ -1,0 +1,74 @@
+<?php
+	$m3d_path=FILE_URL.'/m3d/';
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+			if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){} else if (/(Android)/i.test(navigator.userAgent)){
+				document.write('<meta name="viewport" content="initial-scale=1">');
+			} else {};
+		</script>
+		<meta charset="utf-8"/>
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title></title>
+		<style>
+			html,body{height:100%}
+			#aback{
+				height:100%;
+				position:fixed;
+				display:block;
+				top:5px;
+				left:5px;
+				text-decoration:none;
+				cursor:auto;
+				text-align:left;
+				-webkit-tap-highlight-color:rgba(255,0,0,0);
+			}
+			#aback img{
+				width:50px;
+				display:block;
+			}
+		</style>
+	</head>
+	<body oncontextmenu="return false;" style="-ms-touch-action:none;background:#000;margin:0;text-align:center" onload="tz()">
+		<script>document.write('<a href="'+document.referrer+'#tzq" id="aback">');</script>
+		<img src="<?=$m3d_path?>imges/al3.svg" id="ibk"></img></a>
+		<img id="img1" onload="document.getElementById('img1').style.height=document.body.clientHeight+'px';"/>
+		<script type="text/javascript">
+			function GetQueryString(name) {
+			   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+			   var r = window.location.search.substr(1).match(reg);
+			   if (r!=null) return (r[2]); return null;
+			}
+
+			if(GetQueryString("p") && GetQueryString("n")) imgp="<?=$m3d_path?>pic/"+GetQueryString("id")+"/"+GetQueryString("p")+"/"+GetQueryString("n")+".jpg#tzq";
+			else imgp="/pic/demo1_b/11.jpg#tzq";			
+			document.getElementById("img1").src=imgp;
+		</script>
+	</body>
+	<script type="text/javascript">
+		function tz(){
+			setTimeout(function () {
+				window.scrollTo((document.body.scrollWidth-document.body.clientWidth)/2,(document.body.scrollHeight-document.body.clientHeight)/2);
+			},200);
+		}
+		function rz(){
+			var sw=window.innerWidth;
+			//var sh=window.innerHeight;
+			var scale1=sw;
+			var e1=document.getElementById("ibk");
+			var b1=document.body.clientHeight;
+			if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) var iw=200;else var iw=80;
+			e1.style.width=iw*(1+(scale1-b1)/b1)+"px";
+		}
+		setInterval(rz,300);
+	</script>
+</html>

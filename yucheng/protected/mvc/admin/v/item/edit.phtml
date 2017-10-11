@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>编辑艺术品</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?=FILE_URL?>/css/css.css">
+ </head>
+<body> 
+
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+<tbody>
+<tr>
+<th align=center style="height: 23px">编辑艺术品</th>
+</tr>
+
+	   <tr bgcolor="#DEE5FA">
+        <td align="center" class=txlrow> 
+  <tbody><tr>
+  <td valign="top">
+    <form action="/admin-item-edit-id-<?=$this->item['id']?>.html" method="post" name="userform" onsubmit=""> 
+        <table class="table_area" align="center" cellpadding="3" cellspacing="1" width="98%">
+          <tbody>
+			<tr height="80" class="b" align="left">
+            <td width="80">名称</td>
+            <td><input class="box" name="u_c" id="u_c" value="<?=$this->item['name']?>" size="50" type="text"></td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80"> 关联ID <br/>(会所命名)</td>
+            <td><input class="box" name="guanlian_id_1" id="u_c" value="<?=$this->item['guanlian_id_1']?>" size="50" type="text"></td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">文字介绍</td>
+            <td><input class="box" name="note" id="note" value="<?=$this->item['note']?>" size="50" type="text" style="width:90%"></td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">年代</td>
+            <td><input class="box" name="niandai" value="<?=$this->item['niandai']?>" size="5" type="text" style="width:5%"></td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">口径</td>
+            <td><input class="box" name="koujin" value="<?=$this->item['koujin']?>" size="5" type="text" style="width:5%"> 毫米</td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">底径</td>
+            <td><input class="box" name="dijin" value="<?=$this->item['dijin']?>" size="5" type="text" style="width:5%"> 毫米</td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">高度</td>
+            <td><input class="box" name="height" value="<?=$this->item['height']?>" size="5" type="text" style="width:5%"> 毫米</td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">重量</td>
+            <td><input class="box" name="weight" value="<?=$this->item['weight']?>" size="5" type="text" style="width:5%"> 克</td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">通宽</td>
+            <td><input class="box" name="tongkuan" value="<?=$this->item['tongkuan']?>" size="5" type="text" style="width:5%"> 毫米</td>
+			</tr>
+			<tr height="80" class="b" align="left">
+            <td width="80">腹径</td>
+            <td><input class="box" name="fujin" value="<?=$this->item['fujin']?>" size="5" type="text" style="width:5%"> 毫米</td>
+			</tr>
+          <tr class="b" align="left">
+            <td colspan="2"><center>
+                <a href="javascript:;" onclick="window.opener.location.reload();window.close();" style="color:red">返回</a>
+				<input name="submit" class="btn" value="确定" type="submit">
+                <input name="reset" class="btn" value="重置" type="reset">
+			  </center></td>
+          </tr>
+        </tbody></table>
+	    <center> 
+	    </center>
+    </form>
+  </td>
+  </tr>
+  </tbody>
+</td>
+      </tr>
+
+
+<tr bgcolor="#DEE5FA">
+<td align=center class=txlrow></td>
+</tr>
+</tbody></table>
+
+<?php if($this->res1){?>  
+<table width="98%" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#D73A42" class=tableBorder>
+<tr>
+<th align=center style="height: 23px;background-color:red"><?=$this->res1?></th>
+</tr>
+</table>
+<?php }?>
+</body>
+</html>
