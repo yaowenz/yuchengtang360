@@ -146,7 +146,7 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 		<ul class="listitem">
 			<li class="dl1">
 				<?php
-					echo $i['name'];					
+					echo $i['name'];
 					if($this->acl)
 					{
 						echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:blue;font-size:16px" href="/admin-item-edit-id-'.$i['id'].'.html" target="_blank">编辑基本信息</a>';
@@ -156,22 +156,25 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 			</li>
 			<?php if (!empty($i['name_en'])):?>
 			<li class="dl1_en">
-				<?php echo $i['name_en']; ?>	
+				<?php echo $i['name_en']; ?>
 			</li>
-			<?php endif;?>		
-			<?php if (!empty($i['niandai'])):?>
-			<li class="dl2">
-				<?php echo $i['niandai']; ?>	
-			</li>	
+			<?php endif;?>
+			<?php if (!$has3d):?>
+			<li>
+				<a href="/v-img.html?p=&id=<?=$i['id']?>&n=cover" onclick="if(wx_ready) {wx.previewImage({current:h+'/cover.jpg',urls:p_urls});return false;}"><img src="<?=M_PIC_URL.'/'.$i['id'].'/cover.jpg'?>" width="100%" /></a>
+			</li>
+				<?php if (!empty($i['niandai'])):?>
+			<li class="dl2"><?php echo $i['niandai']; ?></li>
+				<?php endif;?>
 			<?php endif;?>
 			<li class="dl2">
 				<?php
 					$params = [];
 					$params_fields = [
-						'height' => '高 Height', 
-						'weight' => '重 Weight', 
-						'koujin' => '口 Caliber', 					
-						'dijin' => '底 Bottom Diameter'			
+						'height' => '高 Height',
+						'weight' => '重 Weight',
+						'koujin' => '口 Caliber',
+						'dijin' => '底 Bottom Diameter'
 					];
 					$unit_fields = [
 						'height' => 'mm',
@@ -205,32 +208,26 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 			<li id="dl3">
 				<div id="s3d1"></div>
 			</li>
-			<?php else: ?>
-			<li>
-				<a href="/v-img.html?p=&id=<?=$i['id']?>&n=cover" onclick="if(wx_ready) {wx.previewImage({current:h+'/cover.jpg',urls:p_urls});return false;}"><img src="<?=M_PIC_URL.'/'.$i['id'].'/cover.jpg'?>" width="100%" /></a>
-			</li>
 			<?php endif;?>
+			<!-- 语音导览版本 -->
 			<?php if (!$hasAudio): ?>
-			<?php
-				if($i['name'] && trim($i['note'])){
-			?>
+			<?php    if($i['name'] && trim($i['note'])): ?>
 			<li>
 				<hr class="ln1"></hr>
-			</li>			
+			</li>
 			<li class="js1">
 				<?php
 					echo $i['name'].'介绍';
-					if($this->acl)
-					{
+					if($this->acl) {
 						echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:blue;font-size:16px" href="/admin-item-edit-id-'.$i['id'].'.html" target="_blank">编辑标题和简介等基本信息</a>';
 					}
 				?>
 			</li>
 			<li class="dl2">
 				<?=$i['note']?>
-			</li>			
+			</li>
+			<?php    endif; ?>
 			<?php
-				}
 				if($this->acl)
 				{
 					echo '<li style="color:blue;font-size:16px">视频修改或添加:<br/>请将视频文件(640.mp4) 和缩略图(1.jpg)(建议300*200px) 上传到图片服务器: <br/>'.cm_url::get('yucheng-img-path').'/m3d/movie/'.$i['id'].' <br/>目录下</li>';
@@ -240,22 +237,28 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 			<li>
 				<hr class="ln1"></hr>
 			</li>
-			<li class="js1" style="margin-bottom:15px">
-				<p style="font-weight:bold;margin-bottom:5px">语音导览 </p> 
-				<p style="font-size:13px">Audio Guidance</p>
+			<!-- Audio -->
+			<li class="js1" style="margin-bottom:5px">
+				<p style="font-weight:bold;">语音导览</p>
 			</li>
-			<?php endif; // !$hasAudio ?>
-			<!-- Video / Audio -->
 			<li id="vd1">
-				<?php if($hasAudio):?>
-				<script type="text/javascript">
-					audiojs.events.ready(function() {
-			        	var commentaryAudio = audiojs.create(document.getElementById('commentary'));
-					});
-				</script>
 				<audio id="commentary" src="<?=FILE_URL.'/m3d/audio/'.$i['id']?>.mp3" type="audio/mp3" preload="none" loop="false"></video>
-				<?php endif;?>
 			</li>
+			<li class="js1" style="margin-bottom:5px;margin-top:10px">
+				<p style="font-size:13px">Audio Guidance (English)</p>
+			</li>
+			<li id="vd1">
+				<audio id="commentary-en" src="<?=FILE_URL.'/m3d/audio/'.$i['id']?>.mp3" type="audio/mp3" preload="none" loop="false"></video>
+			</li>
+			<script type="text/javascript">
+				audiojs.events.ready(function() {
+			     	var commentaryAudio = audiojs.create(document.getElementById('commentary'));
+			     	var commentaryAudioEn = audiojs.create(document.getElementById('commentary-en'));
+				});
+			</script>
+			<?php endif; // !$hasAudio ?>
+			<!-- Video -->
+			<li id="vd1"></li>
 			<?php
 				if($this->acl)
 				{
@@ -269,7 +272,7 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 				<hr class="ln1"></hr>
 			</li>
 			<li class="js1">
-				<p style="font-weight:bold;margin-bottom:5px">局部展示图 </p> 
+				<p style="font-weight:bold;margin-bottom:5px">局部展示图 </p>
 				<p style="font-size:13px">Detail Showcase</p>
 			</li>
 			<li class="tzq2">
