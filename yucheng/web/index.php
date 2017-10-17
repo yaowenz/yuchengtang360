@@ -16,7 +16,7 @@ define('TEST_DOMAIN','360.yuchengtang');
 
 if($_SERVER['HTTP_HOST']==TEST_DOMAIN) {
 	define('MAIN_DOMAIN',TEST_DOMAIN . '/yuchengtang/yucheng/web');
-	define('COMM_PATH', '/data/htdocs/yuchengtang/comm');
+	define('COMM_PATH', __DIR__ . '/../../comm');
 	ini_set('display_errors','on');
 }
 else
