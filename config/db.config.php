@@ -16,8 +16,8 @@ class cm_db_config
 	{
 		if($_SERVER['HTTP_HOST']==TEST_DOMAIN)
 		{
-			$r['yucheng1']['master'] = array('host'=>'master','port'=>'3306','username'=>'root','password'=>'','dbname'=>'yucheng');
-			$r['yucheng1']['slave'] = array('host'=>'master','port'=>'3306','username'=>'root','password'=>'','dbname'=>'yucheng');
+			$r['yucheng1']['master'] = array('host'=>'m.360antique.com','port'=>'3306','username'=>'yct1','password'=>'g2_8574jfhcur(y8','dbname'=>'yucheng');
+			$r['yucheng1']['slave'] = array('host'=>'master','port'=>'3306','username'=>'root','password'=>'','dbname'=>'yuchengtang_360');
 		}
 		else
 		{
