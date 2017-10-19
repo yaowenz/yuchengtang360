@@ -92,6 +92,10 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 	<script type="text/javascript" src="<?=$m3d_path?>s3d/s3d.js?v=5<?=CSS_VERSION?>"></script>
 	<script type="text/javascript"><?=$m_3d2?></script>
 	<script src="<?=FILE_URL?>/js/audiojs/audio.min.js"></script>
+	<style>
+		li, li p {letter-spacing:0px}
+		div.d_param {float:left;margin-right:20px}
+	</style>		
 </head>
 <body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="bdtl">
 	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
@@ -188,11 +192,11 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 							if (!preg_match('/[cm]m$/', $i[$k])) {
 								$i[$k] .= $unit_fields[$k];
 							}
-							$params[] = "{$v}： {$i[$k]}";
+							$params[] = "<div class=\"d_param\">{$v} : {$i[$k]}</div>";
 						}
 					}
 					
-					echo implode("&nbsp;|&nbsp;", $params);
+					echo implode("", $params);
 				?>
 			</li>
 			<?php if ($has3d) : ?>
@@ -245,10 +249,10 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 				<audio id="commentary" src="<?=FILE_URL.'/m3d/audio/'.$i['id']?>.mp3" type="audio/mp3" preload="none" loop="false"></video>
 			</li>
 			<li class="js1" style="margin-bottom:5px;margin-top:10px">
-				<p style="font-size:13px">Audio Guidance (English)</p>
+				<p style="font-size:13px;letter-spacing:0px">AUDIO GUIDANCE (ENGLISH)</p>
 			</li>
 			<li id="vd1">
-				<audio id="commentary-en" src="<?=FILE_URL.'/m3d/audio/'.$i['id']?>.mp3" type="audio/mp3" preload="none" loop="false"></video>
+				<audio id="commentary-en" src="<?=FILE_URL.'/m3d/audio/'.$i['id']?>_en.mp3" type="audio/mp3" preload="none" loop="false"></video>
 			</li>
 			<script type="text/javascript">
 				audiojs.events.ready(function() {
@@ -273,7 +277,7 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 			</li>
 			<li class="js1">
 				<p style="font-weight:bold;margin-bottom:5px">局部展示图 </p>
-				<p style="font-size:13px">Detail Showcase</p>
+				<p style="font-size:13px;letter-spacing:0px">DETAIL SHOWCASE</p>
 			</li>
 			<li class="tzq2">
 				<?php foreach($i['pics'] as $k=>$p){?>

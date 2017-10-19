@@ -1,0 +1,54 @@
+<?php
+$page_title='御窑遗珍-G20官窑瓷器展';
+require_once(global_info::$v_path_client.'/comm/m_head.phtml');
+?>
+	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
+</head>
+<body style="width:100%;-ms-touch-action:none;position:absolute;" class="yzyz">
+	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
+	<div class="imx">
+		<ul class="listitem wp100">			
+			<li id="top1" style=""></li>
+			<?php 
+			foreach($this->l as $k=>$i){
+				$v = [];
+				if($i['koujin']) $v[]=array('口径 Caliber',$i['koujin']);
+				if($i['dijin']) $v[]=array('底径 Bottom Diameter',$i['dijin']);
+				if($i['height']) $v[]=array('高度 Height',$i['height']);
+				if($i['weight']) $v[]=array('重量',$i['weight'],'克');
+				if($i['tongkuan']) $v[]=array('通宽 Width',$i['tongkuan']);
+				if($i['fujin']) $v[]=array('腹径',$i['fujin']);
+			?>
+			<li class="nr">
+				<a href="/v-d-i-<?=$i['id']?>.html">
+					<div class="rmg" style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/cover.jpg'?>) no-repeat center;background-size:auto 100%;"></div>
+					<div class="t1 wjd"><?=$i['name']?></div>
+					<div style="margin:5px 0px 10px 0px"><?=$i['name_en']?></div>
+					<table>
+						<?php
+							foreach ($v as $param):
+						?>
+						<tr>
+							<td><?php echo $param[0].' : '. $param[1];?></td>
+						<tr>
+						<?php endforeach ?>
+					</table>
+				</a>
+			</li>
+			<li <?php if($k+1!=count($this->l)) echo 'class="ln2"';?>></li>
+			<?php }?>
+		</ul>
+		<?php require_once(global_info::$v_path_client.'/comm/m_foot.phtml');?>
+	</div>
+	<?php if($this->acl) echo '</form>';?>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		var i=document.getElementById("top1");
+		if(i) cw1(i,600,230);
+		gbc("mnl",210,248);
+		gbc("rmg",4,3);
+	}
+</script>
+<?php require_once(global_info::$v_path_client.'/comm/b_foot.phtml');?>

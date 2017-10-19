@@ -104,6 +104,19 @@ class Client_VController extends Client_Controller_Action
 		$l=yc_item::get_list($a);
 		$this->view->l=$l;
 	}
+	
+	public function spg20Action()
+	{
+		require_once LIB_PATH . '/item.class.php';
+		$a = [];
+		$a['id_in'] = [150,151,152,153,154,155,156,157,158,159,160];
+		//$a['state']='>0';
+		$l = yc_item::get_list($a);	
+		$this->view->l=$l;
+		$this->view->type=$type;
+	}
+	
+	
 
 	public function mAction()
 	{

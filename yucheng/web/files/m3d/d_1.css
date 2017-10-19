@@ -147,7 +147,6 @@ a:link,a:visited,a:hover,a:active{color:inherit;}
 .bar1 div {background:#aaa;display:block; position: relative;color: #aaa; height: 5px;line-height: 5px;}
 .js1,.dl1{
 	font-size:16px;
-	letter-spacing:-1px;
 	color:#383838;
 }
 .dl1{
@@ -157,7 +156,6 @@ a:link,a:visited,a:hover,a:active{color:inherit;}
 	line-height:20px;
 	padding-top:8px;
 	color:#888;
-	letter-spacing:-1px;
 }
 .ln1{
 	margin:20px 0 8px;
@@ -400,7 +398,6 @@ a:link,a:visited,a:hover,a:active{color:inherit;}
 .nr table td{
 	height:26px;
 	color:#737373;
-	letter-spacing:-1px;
 }
 .ln2{
     height: 15px;
