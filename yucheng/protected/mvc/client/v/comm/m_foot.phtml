@@ -9,7 +9,12 @@
 	<a class="menu<?php if($this->action=='d' || $this->action=='m' || ($this->action=='l' && $this->type!='z')) echo ' sel';?>" data-role="tab" href="/v-m.html?for_wx_s_bug3" data-toggle="article">
 		<span class="menu-icon iconfont i-md3">馆藏展品</span>
 	</a>
-	<?php /*?><a class="menu<?php if($this->action=='b' || $this->action=='a') echo ' sel';?>" data-role="tab" href="/v-a.html?for_wx_s_bug4" data-toggle="article">
+	<!-- <a class="menu<?php if($this->action=='b' || $this->action=='a') echo ' sel';?>" data-role="tab" href="/v-a.html?for_wx_s_bug4" data-toggle="article">
 		<span class="menu-icon iconfont i-md4">品鉴讲堂</span>
-	</a><?php */?>
+	</a>
+	 -->
+	 
+	 <a class="menu<?php if($this->action=='exhibition') echo ' sel';?>" data-role="tab" href="/v-exhibition.html" data-toggle="article">
+		<span class="menu-icon iconfont i-md-exhibition">特别展览<?php echo $this->action?></span>
+	</a>
 </nav>

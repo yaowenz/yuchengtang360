@@ -57,7 +57,7 @@ class yc_item
 		}
 
 		$select->order('id desc');
-		$select->limit($limit[1],$limit[0]);
+		//$select->limit($limit[1],$limit[0]);
 		$sql = $select->__toString(); //die($sql);
 		$r1 = $db->fetchAll($sql); 	
 		return $r1; 

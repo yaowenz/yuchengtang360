@@ -45,6 +45,11 @@ a:link,a:visited,a:hover,a:active{color:inherit;}
 	background:url(images/m4.png) no-repeat center 17px;
 	background-size:70px 30px;
 }
+
+.i-md-exhibition{
+    background:url(images/m-exhibition.png) no-repeat center 17px;
+    background-size:70px 30px;
+}
 .menubar .sel{
 	background:url(images/mxz.png) no-repeat center 5px; 
 }
@@ -73,6 +78,7 @@ a:link,a:visited,a:hover,a:active{color:inherit;}
 	text-overflow: ellipsis;
 	background-color:transparent;
 	padding:0;
+	width:25%
 }
 .menubar .menu .menu-icon{
 	display:block;
@@ -349,6 +355,21 @@ a:link,a:visited,a:hover,a:active{color:inherit;}
 	background:url(images/sw3.png) no-repeat left top;
 	background-size:110px auto;
 }
+#sw-sp-exhibition .swd {
+	background:url(images/sw-exhibition.png) no-repeat left top;
+    background-size:110px auto;
+}
+
+#sw-sp-exhibition .exhibition-g50b5 {
+	background:url(images/sp-exhibition-g20b5.jpg) no-repeat center;
+	background-size:auto 100%;
+	background-color:white;
+	padding:10px 0px;
+	width:80px;	
+	height:60px;
+	float:left
+}
+
 .bsy .tzq{
 	padding:0;
 }
@@ -380,6 +401,21 @@ a:link,a:visited,a:hover,a:active{color:inherit;}
 	/*600*288*/
 	background:url('images/p75.png') repeat-x center bottom,url(images/gczp.jpg) no-repeat center center;
 	background-size:100% 12%,100% 100%;
+}
+.exhibition #top1{
+    /*600*288*/
+    background:url('images/p75.png') repeat-x center bottom,url(images/header-exhibition.jpg) no-repeat center center;
+    background-size:100% 12%,100% 100%;
+}
+.yzyz.sp-b5 #top1{
+    /*600*288*/
+    background:url('images/p75.png') repeat-x center bottom,url(images/header-b5.jpg) no-repeat center center;
+    background-size:100% 12%,100% 100%;
+}
+.yzyz.sp-g20 #top1{
+    /*600*288*/
+    background:url('images/p75.png') repeat-x center bottom,url(images/header-g20.jpg) no-repeat center center;
+    background-size:100% 12%,100% 100%;
 }
 .yzyz .rmg{
 	float:right;

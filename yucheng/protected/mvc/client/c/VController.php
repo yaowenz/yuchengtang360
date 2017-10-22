@@ -105,7 +105,10 @@ class Client_VController extends Client_Controller_Action
 		$this->view->l=$l;
 	}
 	
-	public function spg20Action()
+	/**
+	 * G20展览列表
+	 */
+	public function spb5Action()
 	{
 		require_once LIB_PATH . '/item.class.php';
 		$a = [];
@@ -114,6 +117,29 @@ class Client_VController extends Client_Controller_Action
 		$l = yc_item::get_list($a);	
 		$this->view->l=$l;
 		$this->view->type=$type;
+	}
+	
+	/**
+	 * 金砖五国展览列表
+	 */
+	public function spg20Action()
+	{
+		require_once LIB_PATH . '/item.class.php';
+		$a = [];
+		$a['id_in'] = [146, 147, 148, 149];
+		//$a['state']='>0';
+		$l = yc_item::get_list($a);
+		$this->view->l=$l;
+		$this->view->type=$type;
+	}	
+	
+	/**
+	 * 特别展览列表
+	 */
+	public function exhibitionAction()
+	{
+
+		
 	}
 	
 	

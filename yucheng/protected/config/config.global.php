@@ -3,7 +3,7 @@
 配置 + 初始化文件
 by zx 2016/2/2
 */
-define('CSS_VERSION','51');
+define('CSS_VERSION','52');
 ini_set("include_path",ini_get("include_path").PATH_SEPARATOR.COMM_PATH . '/../frame/');
 require_once COMM_PATH . '/../config/url.config.php';
 

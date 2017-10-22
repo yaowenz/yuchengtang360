@@ -4,11 +4,53 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 ?>
 	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
 </head>
-<body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="bsy">
+<body style="width:100%;-ms-touch-action:none;position:absolute;" class="bsy">
 	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
 	<div class="imx">
 		<ul class="listitem wp100">
 			<li id="top1"></li>
+			<!-- 特别展览 -->
+			<li>
+				<table class="y1">
+					<tr class="tp"><td class="lt"></td><td class="ce"></td><td class="rt"></td></tr>
+					<tr class="mi">
+						<td class="lt"></td>
+						<td class="ce" id="sw-sp-exhibition">
+							<div class="swd">
+								<a class="dr1" href="/v-exhibition.html">&nbsp;</a>
+							</div>
+							<div class="" style="padding-top:10px" onclick="location.href='/v-exhibition.html'">
+								<div class="exhibition-g50b5"></div>
+								<div class="title" style="padding-top:8px;margin-left:10px;color:#666;float:left">
+									<h3 style="font-size:14px;font-weight:bold;margin-bottom:5px">御窑遗珍</h3>
+									<p style="font-size:12px">G20及金砖五国会议官窑瓷器展</p>
+								</div>
+							</div>
+						</td>
+						<td class="rt"></td>
+					</tr>
+					<tr class="bn"><td class="lt"></td><td class="ce"></td><td class="rt"></td></tr>
+				</table>
+			</li>
+			<!-- 馆藏展品 -->
+			<li>
+				<table class="y1">
+					<tr class="tp"><td class="lt"></td><td class="ce"></td><td class="rt"></td></tr>
+					<tr class="mi">
+						<td class="lt"></td><td class="ce" id="sw2">
+							<div class="swd">
+								<a class="dr1" href="/v-m.html?forwxsbug3">&nbsp;</a>
+							</div>
+							<div class="tzq">
+								<a href="/v-l-m-1.html"><div style="background:url(<?=$m3d_path?>images/sb1.jpg) no-repeat;background-size:100%;"></div></a>
+								<a href="/v-l-m-1.html"><div style="background:url(<?=$m3d_path?>images/sb2.jpg) no-repeat;background-size:100%;"></div></a>
+							</div>
+						</td><td class="rt"></td>
+					</tr>
+					<tr class="bn"><td class="lt"></td><td class="ce"></td><td class="rt"></td></tr>
+				</table>
+			</li>
+			<!-- 一周一珍 -->
 			<li>
 				<table class="y1">
 					<tr class="tp"><td class="lt"></td><td class="ce"></td><td class="rt"></td></tr>
@@ -21,23 +63,6 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 								<?php foreach($this->l as $k=>$i){?>
 								<a href="/v-d-i-<?=$i['id']?>.html"><div style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/s/'.$i['img_name']?>) no-repeat center;background-size:auto 100%;"></div><?=$i['name']?></a>
 								<?php }?>
-							</div>
-						</td><td class="rt"></td>
-					</tr>
-					<tr class="bn"><td class="lt"></td><td class="ce"></td><td class="rt"></td></tr>
-				</table>
-			</li>
-			<li>
-				<table class="y1">
-					<tr class="tp"><td class="lt"></td><td class="ce"></td><td class="rt"></td></tr>
-					<tr class="mi">
-						<td class="lt"></td><td class="ce" id="sw2">
-							<div class="swd">
-								<a class="dr1" href="/v-m.html?forwxsbug3">&nbsp;</a>
-							</div>
-							<div class="tzq">
-								<a href="/v-l-m-1.html"><div style="background:url(<?=$m3d_path?>images/sb1.jpg) no-repeat;background-size:100%;"></div></a>
-								<a href="/v-l-m-1.html"><div style="background:url(<?=$m3d_path?>images/sb2.jpg) no-repeat;background-size:100%;"></div></a>
 							</div>
 						</td><td class="rt"></td>
 					</tr>

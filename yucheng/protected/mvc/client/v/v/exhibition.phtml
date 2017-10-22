@@ -1,0 +1,72 @@
+<?php
+//$page_title=SITE_NAME;
+$page_title='特别展览';
+require_once(global_info::$v_path_client.'/comm/m_head.phtml');
+?>
+	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
+	<style>
+		/** Override d_1.css**/
+		.mn1 .m1 {width:120px;padding:10px 0px;height:100px}
+		.mn1 .m1 div {min-height:80px!important;height:80px!important;background-size:auto 100%!important;}
+		,mn1 .m2 {padding:0px;vertical-align:top;padding-top:15px}
+	
+	</style>
+</head>
+<body style="width:100%;-ms-touch-action:none;position:absolute;" class="exhibition">
+	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
+	<div class="imx">
+		<ul class="listitem wp100">
+			<li id="top1"></li>
+			<li class="mn1">
+				<table>
+					<tr>
+						<td class="m1" align="center">
+							<div class="mnl" style="background:url(<?=$m3d_path?>images/thumb-g20.png) no-repeat;"></div>
+						</td>
+						<td class="m2">
+							<a href="/v-spG20.html">
+								<table class="mh1">
+									<td class="mtt" style="font-size:14px">G20会议官窑瓷器</td>								
+								</table>								
+								<div style="width:100%;margin-top:10px">
+									<div class="xq1" style="float:left;margin-left:0px"></div>
+								</div>
+							</a>
+						</td>
+					<tr>
+				</table>
+			</li>
+			<li class="ln2"></li>
+			<li class="mn1">
+				<table>
+					<tr>
+						<td class="m1" align="center" style="width:120px;padding:10px 0px;height:100px">
+							<div class="mnl" style="background:url(<?=$m3d_path?>images/thumb-b5.png) no-repeat;"></div>
+						</td>
+						<td class="m2">
+							<a href="/v-spB5.html">
+								<table class="mh1">
+									<td class="mtt" style="font-size:14px">金砖五国会议官窑瓷器</td>									
+								</table>								
+								<div style="width:100%;margin-top:10px">
+									<div class="xq1" style="float:left;margin-left:0px"></div>
+								</div>
+							</a>
+						</td>
+					<tr>
+				</table>
+			</li>
+			<li class="ln2"></li>
+		</ul>
+		<?php require_once(global_info::$v_path_client.'/comm/m_foot.phtml');?>
+	</div>
+	<?php if($this->acl) echo '</form>';?>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		var i=document.getElementById("top1");
+		cw1(i,600,230);		
+	}
+</script>
+<?php require_once(global_info::$v_path_client.'/comm/b_foot.phtml');?>
