@@ -1,12 +1,12 @@
 <?php
 /*
 	2016/2/24
-*/ 
-require_once LIB_PATH . '/db.class.php';   
+*/
+require_once LIB_PATH . '/db.class.php';
 
-class yc_item 
+class yc_item
 {
-	function add($a){ 
+	function add($a){
 		if(!$a) return false;
 		
 		$db = db_o::get_single('master');
@@ -18,20 +18,20 @@ class yc_item
 		$rows_affected = $db->insert($table, $a);
 		$last_insert_id = $db->lastInsertId();
 	
-		return $last_insert_id; 
+		return $last_insert_id;
 	}
 
 	function update($a){
 		if(!$a) return false;
 		$db = db_o::get_single('master');
 		$table = 'yc_item';
-		$where = $db->quoteInto('id = ? ', $a['id']); 
+		$where = $db->quoteInto('id = ? ', $a['id']);
 		$rows_affected = $db->update($table, $a, $where);
 		return $rows_affected;
 	}
 
-	function get_list($a){
-		$db = db_o::get_single(); 
+	function get_list($a, $order = null){
+		$db = db_o::get_single();
 		$select = $db->select();
 		$select->from('yc_item', '*');
 		if($a['id_in'])
@@ -55,17 +55,21 @@ class yc_item
 		{
 			$select->where('state = ?', $a['state']);
 		}
+		
+		if (empty($order)) {
+		    $order = 'id desc';
+		}
 
-		$select->order('id desc');
+		$select->order($order);
 		//$select->limit($limit[1],$limit[0]);
 		$sql = $select->__toString(); //die($sql);
-		$r1 = $db->fetchAll($sql); 	
-		return $r1; 
+		$r1 = $db->fetchAll($sql);
+		return $r1;
 	}
 
-	function get_item($id){ 
+	function get_item($id){
 		if(!$id) return false;
-		$db = db_o::get_single(); 
+		$db = db_o::get_single();
 		$select = $db->select();
 		$select	->from('yc_item', '*')
 				->where('id = ?', $id);
@@ -83,16 +87,16 @@ class yc_item
 			$select->where('state = ?', $a['state']);
 		}
 
-		$sql = $select->__toString(); //die($sql);   
+		$sql = $select->__toString(); //die($sql);
 		$r1 = $db->fetchRow($sql);
-		return $r1; 
+		return $r1;
 	}
 
-	function del($uid){ 
+	function del($uid){
 		if(!$uid) return false;
 		$db = db_o::get_single('master');
 		$table = 'yc_item';
-		$where = $db->quoteInto('id = ?', $uid); 
+		$where = $db->quoteInto('id = ?', $uid);
 		$rows_affected = $db->delete($table, $where);
 		return $rows_affected;
 	}

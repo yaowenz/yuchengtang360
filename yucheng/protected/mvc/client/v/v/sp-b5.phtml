@@ -10,9 +10,10 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 <body style="width:100%;-ms-touch-action:none;position:absolute;" class="yzyz sp-b5">
 	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
 	<div class="imx">
-		<ul class="listitem wp100">			
+		<ul class="listitem wp100">
 			<li id="top1" style=""></li>
-			<?php 
+			<li class="ttp" style="height:42px;margin:0 0 10px" onclick="history.length>2?history.go(-1):window.scrollTo(0,0);"></li>
+			<?php
 			foreach($this->l as $k=>$i){
 				$v = [];
 				if($i['koujin']) $v[]=array('口径 Caliber',$i['koujin']);

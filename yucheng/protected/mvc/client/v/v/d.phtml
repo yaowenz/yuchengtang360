@@ -97,7 +97,7 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 		div.d_param {float:left;margin-right:20px}
 		.audiojs .play-pause {width:38px!important}
 		.audiojs .scrubber {width:130px!important}
-	</style>		
+	</style>
 </head>
 <body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="bdtl">
 	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
@@ -158,7 +158,13 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 						echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:blue;font-size:16px" href="/admin-item-edit-id-'.$i['id'].'.html" target="_blank">编辑基本信息</a>';
 					}
 				?>
+				<?php if ($i['id'] >= 150):?>
+				<a class="dr1" href="/v-spB5.html">&nbsp;</a>
+				<?php elseif ($i['id'] >= 146):?>
+				<a class="dr1" href="/v-spG20.html">&nbsp;</a>
+				<?php else:?>
 				<a class="dr1" href="/v-m.html?forwxsbug3">&nbsp;</a>
+				<?php endif;?>
 			</li>
 			<?php if (!empty($i['name_en'])):?>
 			<li class="dl1_en">

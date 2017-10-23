@@ -114,9 +114,8 @@ class Client_VController extends Client_Controller_Action
 		$a = [];
 		$a['id_in'] = [150,151,152,153,154,155,156,157,158,159,160];
 		//$a['state']='>0';
-		$l = yc_item::get_list($a);	
+		$l = yc_item::get_list($a, 'id asc');
 		$this->view->l=$l;
-		$this->view->type=$type;
 	}
 	
 	/**
@@ -128,10 +127,9 @@ class Client_VController extends Client_Controller_Action
 		$a = [];
 		$a['id_in'] = [146, 147, 148, 149];
 		//$a['state']='>0';
-		$l = yc_item::get_list($a);
+		$l = yc_item::get_list($a, 'id asc');
 		$this->view->l=$l;
-		$this->view->type=$type;
-	}	
+	}
 	
 	/**
 	 * 特别展览列表
