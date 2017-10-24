@@ -14,16 +14,15 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING ^ E_DEPRECATED);
 
 define('TEST_DOMAIN','360.yuchengtang');
 
+define('COMM_PATH', __DIR__ . '/../../comm');
 if($_SERVER['HTTP_HOST']==TEST_DOMAIN) {
 	define('MAIN_DOMAIN',TEST_DOMAIN . '/yuchengtang/yucheng/web');
-	define('COMM_PATH', __DIR__ . '/../../comm');
 	ini_set('display_errors','on');
 }
 else
 {
 	ini_set('display_errors','off');
 	define('MAIN_DOMAIN','m.360antique.com');
-	define('COMM_PATH', '/home/www/comm');
 }
 
 
