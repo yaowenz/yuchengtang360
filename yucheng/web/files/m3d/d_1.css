@@ -45,10 +45,13 @@ a:link,a:visited,a:hover,a:active{color:inherit;}
 	background:url(images/m4.png) no-repeat center 17px;
 	background-size:70px 30px;
 }
-
 .i-md-exhibition{
     background:url(images/m-exhibition.png) no-repeat center 17px;
     background-size:70px 30px;
+}
+.i-md-reservation{
+    background:url(images/mbl.png) no-repeat right 17px,url(images/m-reservation.png) no-repeat center 17px;
+    background-size:1px 25px,70px 30px;
 }
 .menubar .sel{
 	background:url(images/mxz.png) no-repeat center 5px; 
