@@ -5,7 +5,7 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 ?>
 	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
 </head>
-<body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="gczp">
+<body style="width:100%;-ms-touch-action:none;position:absolute;" class="gczp">
 	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
 	<div class="imx">
 		<ul class="listitem wp100">
@@ -59,7 +59,29 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 					<tr>
 				</table>
 			</li>
-			<li></li>
+			<li class="ln2" style="border:none"></li>
+		</ul>
+		<ul class="bsy">
+			<!-- 一周一珍 -->
+			<li>
+				<table class="y1">
+					<tr class="tp"><td class="lt"></td><td class="ce"></td><td class="rt"></td></tr>
+					<tr class="mi">
+						<td class="lt"></td><td class="ce" id="sw1">
+							<div class="swd">
+								<a class="dr1" href="/v-l-t-z.html?forwxsbug2">&nbsp;</a>
+							</div>
+							<div class="tzq">
+								<?php foreach($this->l as $k=>$i){?>
+								<a href="/v-d-i-<?=$i['id']?>.html"><div style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/s/'.$i['img_name']?>) no-repeat center;background-size:auto 100%;"></div><?=$i['name']?></a>
+								<?php }?>
+							</div>
+						</td><td class="rt"></td>
+					</tr>
+					<tr class="bn"><td class="lt"></td><td class="ce"></td><td class="rt"></td></tr>
+				</table>
+			</li>
+			<li class="ln2" style="border:none"></li>
 		</ul>
 		<?php require_once(global_info::$v_path_client.'/comm/m_foot.phtml');?>
 	</div>

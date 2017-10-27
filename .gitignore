@@ -1,8 +1,9 @@
-yucheng/web/files/m3d/movie/*
-yucheng/web/files/m3d/3dpic/*
-yucheng/web/files/m3d/s3d/*
-yucheng/web/files/m3d/pic/*
 .project
 .buildpath
 .settings
 yucheng/web/files/m3d/imges
+yucheng/web/files/m3d/movie/*
+yucheng/web/files/m3d/3dpic/*
+yucheng/web/files/m3d/s3d/*
+yucheng/web/files/m3d/pic/*
+yucheng/web/files/m3d/audio/

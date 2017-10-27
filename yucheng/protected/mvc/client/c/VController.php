@@ -144,7 +144,11 @@ class Client_VController extends Client_Controller_Action
 
 	public function mAction()
 	{
-
+		// 一周一珍
+		require_once LIB_PATH . '/item.class.php';
+		$a['id_in']=array(38,76,63);
+		$l=yc_item::get_list($a);
+		$this->view->l=$l;
 	}
 	public function aAction()
 	{
