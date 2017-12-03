@@ -105,6 +105,18 @@ class Client_VController extends Client_Controller_Action
 		$this->view->l=$l;
 	}
 	
+	public function d360Action()
+	{
+		$id=$this->getRequest()->i;
+		if(!$id || !is_numeric($id)) die('');
+		
+		require_once LIB_PATH . '/item.class.php';
+		$i = yc_item::get_item($id);
+		if(!$i) die('');
+
+		$this->view->detail=$i;
+	}
+	
 	/**
 	 * G20展览列表
 	 */
