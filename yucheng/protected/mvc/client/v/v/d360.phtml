@@ -86,8 +86,23 @@ AAA;
     $m_3d2=str_replace('item_i_id',FILE_URL.'/m3d/3dpic/'.$i['id'],$m_3d);
 }
 $page_title=SITE_NAME;
-require_once(global_info::$v_path_client.'/comm/m_head.phtml');
+if(!$page_title) $page_title=SITE_NAME;
+$ats_path=FILE_URL.'/assets/';
+$m3d_path=FILE_URL.'/m3d/';
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=0,minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="screen-orientation" content="portrait">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="msapplication-tap-highlight" content="no">
+	<title><?=$page_title?></title>
+	<link rel="stylesheet" href="<?=$ats_path?>agile/css/agile.layout.css">
+	<link rel="stylesheet" href="<?=$ats_path?>agile/css/flat/flat.component.css">
+	<link rel="stylesheet" href="<?=$ats_path?>agile/css/flat/flat.color.css">
+	<link rel="stylesheet" href="<?=$ats_path?>agile/css/flat/iconline.css">
 	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
 	<script type="text/javascript" src="<?=$m3d_path?>s3d/s3d.js?v=5<?=CSS_VERSION?>"></script>
 	<script type="text/javascript"><?=$m_3d2?></script>
