@@ -73,7 +73,14 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 							</div>
 							<div class="tzq">
 								<?php foreach($this->l as $k=>$i){?>
-								<a href="/v-d-i-<?=$i['id']?>.html"><div style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/s/'.$i['img_name']?>) no-repeat center;background-size:auto 100%;"></div><?=$i['name']?></a>
+								<a href="/v-d-i-<?=$i['id']?>.html">
+								<?php if(preg_match('/^\/m3d\//', $i['img_name'])): ?>
+								<div style="background:url('<?=FILE_URL.$i['img_name']?>') no-repeat center;background-size:auto 100%;"></div>
+								<?php else: ?>
+								<div style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/s/'.$i['img_name']?>) no-repeat center;background-size:auto 100%;"></div>
+								<?php endif; ?>
+								<?=$i['name']?>
+								</a>
 								<?php }?>
 							</div>
 						</td><td class="rt"></td>

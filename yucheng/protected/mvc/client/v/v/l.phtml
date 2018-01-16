@@ -6,7 +6,7 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 ?>
 	<link rel="stylesheet" href="<?=$m3d_path?>d_1.css?v=<?=CSS_VERSION?>">
 </head>
-<body oncontextmenu="return false;"style="width:100%;-ms-touch-action:none;position:absolute;" class="yzyz">
+<body style="width:100%;-ms-touch-action:none;position:absolute;" class="yzyz">
 	<?php if($this->acl) echo '<form method="post" action="" enctype="multipart/form-data">';?>
 	<div class="imx">
 		<ul class="listitem wp100">
@@ -74,7 +74,11 @@ require_once(global_info::$v_path_client.'/comm/m_head.phtml');
 			?>
 			<li class="nr">
 				<a href="/v-d-i-<?=$i['id']?>.html">
+					<?php if(preg_match('/^\/m3d\//', $i['img_name'])): ?>
+					<div class="rmg" style="background:url('<?=FILE_URL.$i['img_name']?>') no-repeat center;background-size:auto 100%;"></div>
+					<?php else: ?>
 					<div class="rmg" style="background:url(<?=M_PIC_URL.'/'.$i['id'].'/s/'.$i['img_name']?>) no-repeat center;background-size:auto 100%;"></div>
+					<?php endif; ?>
 					<div class="t1 wjd"><?=$i['name']?></div>
 					<table>
 						<?php
